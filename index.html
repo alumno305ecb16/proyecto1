@@ -1749,10 +1749,19 @@ function capdep(clicked_id)
 	
 		suma=parseInt(aa)+parseInt(bb)+parseInt(cc)+parseInt(dd)+parseInt(ee)+parseInt(ff)+parseInt(gg);
 		
-		if (s==1)
-	{
+		var par=document.getElementById("parte").innerHTML;
+		if (par=="1 PARTE")
+		{
+			var k=204
+		}else{
+			var k=200	
+		}
 		
-		t=(parseInt(suma)+204)
+		
+		if (s==1)
+			{
+		
+		t=(parseInt(suma)+parseInt(k))
 		var r=t/7
 		
 		r=r.toString();
@@ -1785,7 +1794,7 @@ function capdep(clicked_id)
 			var dd=r.charAt(3)
 			var mm =r.substring(0,2);
 			
-			alert(dd);
+			//alert(dd);
 			if (dd=="")
 			{	
 				//mod=mod.toString();
