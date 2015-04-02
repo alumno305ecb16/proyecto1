@@ -1,0 +1,2239 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Untitled Document</title>
+<link href="jquery-mobile/jquery.mobile-1.3.2.min.css" rel="stylesheet" type="text/css"/>
+<link href="jquery-mobile/fondo1.min.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="jquery-mobile/estilos.css">
+
+<script src="jquery-mobile/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/acciones.js" type="text/javascript"></script>
+
+<script src="phonegap.js"></script><!-- necesario*/-->
+</head>
+
+<body>
+
+<!----------------------------------------PAGUINA PRINCIPAL-------------------------------------------------------->
+
+<div data-role="page" id="page" data-theme="a">
+	<div data-role="header" data-theme="a">
+    		<h1>EDAD GESTACIONAL</h1>
+     </div>
+      <div data-role="content" data-theme="a">
+     	<ul data-role="listview">
+        <li><a href="#pagparto" data-transition="slidedown" onClick="limpiarfecha()">FECHA PROBABLE DE PARTO</a></li>
+        <li><a href="#pagdep" data-transition="slidedown" onClick="limpiarcapurro()">CAPURRO</a></li>
+         <li><a href="#pagsildis" data-transition="slidedown" onClick="limpiarsilverman()">SILVERMAN</a></li>
+        
+        <br>
+        <li><a href="#pagacerca" data-transition="slidedown">ACERCA DE</a></li>
+          
+         </ul>
+        </div>
+    <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+  		</div>
+
+<!------------------------------------------------FECHA DE PROBABLE PARTO------------------------------------------->
+<div data-role="page" id="pagparto" data-theme="a">
+	<div data-role="header" data-theme="a">
+   
+    		
+    		<p align="center">FECHA PROBABLE DE PARTO</p>
+          
+     </div>
+       
+   <div>
+   <br>
+    <div align="left"><a href="#page" class="proyecto"> INICIO</a></div>
+     <center>
+     <h3>FECHA DE LA ULTIMA MENSTRUACION (FUM)</h3>
+      
+ <!-------------------------------------------DIA--------------------------------------------------------------->
+     <form name="dd">
+       <SELECT NAME="dd" id="dd" class="form_select"> 
+           <p>
+         <OPTION VALUE=1>1</OPTION>
+         <OPTION VALUE=2>2</OPTION>
+         <OPTION VALUE=3>3</OPTION>
+         <OPTION VALUE=4>4</OPTION> 
+         <OPTION VALUE=5>5</OPTION>
+         <OPTION VALUE=6>6</OPTION>
+         <OPTION VALUE=7>7</OPTION>
+         <OPTION VALUE=8>8</OPTION>
+         <OPTION VALUE=9>9</OPTION>
+         <OPTION VALUE=10>10</OPTION>
+         <OPTION VALUE=11>11</OPTION>
+         <OPTION VALUE=12>12</OPTION> 
+         <OPTION VALUE=13>13</OPTION>
+         <OPTION VALUE=14>14</OPTION>
+         <OPTION VALUE=15>15</OPTION>
+         <OPTION VALUE=16>16</OPTION>
+         <OPTION VALUE=17>17</OPTION>
+         <OPTION VALUE=18>18</OPTION>
+         <OPTION VALUE=19>19</OPTION>
+         <OPTION VALUE=20>20</OPTION>
+         <OPTION VALUE=21>21</OPTION>
+         <OPTION VALUE=22>22</OPTION>
+         <OPTION VALUE=23>23</OPTION>
+         <OPTION VALUE=24>24</OPTION>
+         <OPTION VALUE=25>25</OPTION>
+         <OPTION VALUE=26>26</OPTION>
+         <OPTION VALUE=27>27</OPTION>
+         <OPTION VALUE=28>28</OPTION>
+         <OPTION VALUE=29>29</OPTION>
+         <OPTION VALUE=30>30</OPTION>
+         <OPTION VALUE=31>31</OPTION>
+       	</p>  
+       </SELECT>
+              
+       </form>
+       
+  <!-------------------------------------------MES------------------------------------------------------------>     
+       <form name="mm">
+       <SELECT NAME="mm" id="mm" class="form_select"> 
+           <p>
+         <OPTION VALUE=1>ENERO</OPTION>
+         <OPTION VALUE=2>FEBRERO</OPTION>
+         <OPTION VALUE=3>MARZO</OPTION>
+         <OPTION VALUE=4>ABRIL</OPTION> 
+         <OPTION VALUE=5>MAYO</OPTION>
+         <OPTION VALUE=6>JUNIO</OPTION>
+         <OPTION VALUE=7>JULIO</OPTION>
+         <OPTION VALUE=8>AGOSTO</OPTION>
+         <OPTION VALUE=9>SEPTIEMBRE</OPTION>
+         <OPTION VALUE=10>OCTUBRE</OPTION>
+         <OPTION VALUE=11>NOVIEMBRE</OPTION>
+         <OPTION VALUE=12>DICIEMBRE</OPTION>
+         </p>
+         </SELECT>
+       </form>
+          
+ <!-----------------------------------------------AÑO---------------------------------------------------------->         
+      <form name="mm">
+       <SELECT NAME="yyyy" id="yyyy" class="form_select"> 
+           <p>
+         <OPTION VALUE=1>2014</OPTION>
+         <OPTION VALUE=2>2015</OPTION>
+     
+       </p>
+       </SELECT>
+       </form>
+     
+    <div>
+    
+    </div>
+    
+     </center>
+     
+    </div>
+
+<!----------------------------------SCRIPT CALCULO DE FECHA----------------------------------------------------->
+              
+    <script>
+	function operaciones()
+	{
+		var mes=document.getElementById("mm").value;
+		var dia=document.getElementById("dd").value;
+		var yyy=document.getElementById("yyyy").value
+		
+		var combo = document.getElementById("yyyy");
+		var selected = combo.options[combo.selectedIndex].text; 
+		
+		var resdia;
+		
+		var xy;
+		var di;
+		var me;
+		var yy;
+		
+		xy= parseInt(selected)
+		di= parseInt(dia);
+		me= parseInt(mes); 
+		yy= parseInt(yyy);
+						
+		var m;
+			
+		var d=di;
+		var xmes;
+		var xy
+					
+		for(var i=1;i<=287;i++)
+		{
+			
+			if(d==m)
+				{
+					me=me+1
+					d=0
+				}	
+							
+				if(me>12)
+				{
+					me=1
+					xy=xy+1
+				}
+					
+							
+			switch(me)
+		{
+			case 1:
+				m=31
+				xmes="ENERO"
+				break;
+			case 2:
+				m=28
+				xmes="FEBRERO"
+				break;
+			case 3:
+				m=31
+				xmes="MARZO"
+				break;
+			case 4:
+				m=30
+				xmes="ABRIL"
+				break;
+			case 5:
+				m=31
+				xmes="MAYO"
+				break;
+			case 6:
+				m=30
+				xmes="JUNIO"
+				break;
+			case 7:
+				m=31
+				xmes="JULIO"
+				break;
+			case 8:
+				m=31
+				xmes="AGOSTO"
+				break;
+			case 9:
+				m=30
+				xmes="SEPTIEMBRE"
+				break;
+			case 10:
+				m=31
+				xmes="OCTUBRE"
+				break;
+			case 11:
+				m=30
+				xmes="NOVIEMBRE"
+				break;
+			case 12:
+				m=31
+				xmes="DICIEMBRE"
+				break;
+		}
+		
+		if(m==di)
+		{
+			if(d==m)
+				{
+					me=me+1
+					d=0
+				}	
+							
+				if(me>12)
+				{
+					me=1
+					xy=xy+1
+				}
+		}
+					
+		d=d+1
+		
+		if(i==273)
+			{
+				var fecha1=d+" / " + xmes + " / " + xy;
+			}
+			
+		
+		if(i==287)
+			{
+				var fecha2=d+" / " + xmes + " / " + xy;
+			}
+			
+		if(i==280)
+			{
+				var fecha=d+" / " + xmes + " / " + xy;
+			}
+		}
+		
+		if(d>m)
+		{
+		alert("FECHA INVALIDA") 
+	
+			document.getElementById("res").innerHTML ="";
+			document.getElementById("pro").innerHTML="";
+			document.getElementById("opc").innerHTML="";
+			document.getElementById("res1").innerHTML="";
+		}else{
+			document.getElementById("res").innerHTML =fecha1+"  -  "+fecha2;
+			document.getElementById("res1").innerHTML=fecha;
+			document.getElementById("pro").innerHTML="PROBABLE";
+			document.getElementById("opc").innerHTML="OPCIONAL";
+		}						
+	}
+    </script>
+       
+ <!------------------------------------LIMPIAR FECHA----------------------------------------------------->      
+       
+    <script>
+	function limpiarfecha()
+	{
+			document.getElementById("res").innerHTML ="";
+			document.getElementById("pro").innerHTML="";
+			document.getElementById("opc").innerHTML="";
+			document.getElementById("res1").innerHTML="";
+	}
+	</script>
+      
+ <!--------------------------------------------REESULTADO FECHA------------------------------------------>                  
+<center>
+<form>
+<br>
+
+<a href="" class="proyecto" onClick="operaciones()">CALCULAR</a><br>
+
+ 
+</form>
+
+<br>
+
+<form>
+<div id="operaciones"></div>
+</form>
+
+<h><label id="pro"></label></h5>
+
+<h4 style="background-color:#FF0"><div id="res1"></div></h4>
+
+<h><label id="opc"></label></h5>
+<font color="#FFFFFF"><h4 style="background-color:#F00"><div id="res"></div></h4></font>
+
+</center>
+
+<br>  
+  <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+  </div>
+  
+  
+  
+  <!---------------------------------SCRIPT NO FUNCIONA----------------------------------------------------->
+  
+<script type="text/livescript">
+function pab(clicked_id)
+{
+	var pabellon=(clicked_id);
+	var glandula=(clicked_id);
+	
+	var valpabellon;
+	var valglandula;
+	var suma;
+	var s;
+	
+	switch(pabellon)
+		{
+		case "a1":
+			suma=0
+			s=0
+			break;
+		case "a2":
+			suma=8
+			s=0
+			break;
+		case "a3":
+			suma=16
+			s=0
+			break;
+		case "a4":
+			suma=24
+			s=0
+			break;
+		case "b1":
+			suma=0
+			s=0
+			break;
+		case "b2":
+			suma=5
+			s=0
+			break;
+		case "b3":
+			suma=10
+			s=0
+			break;
+		case "b4":
+			suma=15
+			s=0
+			break;
+		case "c1":
+			suma=0
+			s=0
+			break;
+		case "c2":
+			suma=5
+			s=0
+			break;
+		case "c3":
+			suma=10
+			s=0
+			break;
+		case "c4":
+			suma=15
+			s=0
+			break;
+		case "c5":
+			s=0
+			suma=20
+			break;
+		case "d1":
+			suma=0
+			s=1
+			break;
+		case "d2":
+			suma=5
+			s=1
+			break;
+		case "d3":
+			suma=10
+			s=1
+			break;
+		case "d4":
+			suma=15
+			s=1
+			break;
+		case "d5":
+			suma=20
+			s=1
+			break;
+		case "l1":
+			suma=0
+			s=0
+			break;
+		case "l2":
+			suma=5
+			s=0
+			break;
+		case "l3":
+			suma=10
+			s=0
+			break;
+		case "l4":
+			s=15
+			s=0
+			break;
+		}
+		
+		var total = document.getElementById("valortotal").innerHTML;
+		
+		total=(parseInt(total)+parseInt(suma));
+			
+		var a=document.getElementById("valortotal").innerHTML =total;
+		
+	
+	if (s==1)
+	{
+		total = document.getElementById("valortotal").innerHTML;
+		t=(parseInt(total)+204)
+		var r=t/7
+		
+		
+		r=r.toString();
+				
+		var numcaracteres = r.length;
+		var num=parseInt(numcaracteres);
+		
+		
+		var cadena = r.charAt(3);
+				
+		var cad=parseInt(cadena);
+			
+		if (cad>=7)
+		{
+			r=parseInt(r)+1
+		} else{
+			var r =r.substring(0,4); 
+		}
+							
+		a=document.getElementById("valortotal").innerHTML =r+" SEMANAS";
+		
+	}
+				
+}
+</script>  
+<!------------------------------CAPURRO NO FUNCIONA----------------------------------------------------------->
+	<div data-role="page" id="pagsano" data-add-back-btn="true" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<h1>FORMA DE LA OREJA(PABELLÓN)</h1>
+     </div>
+
+	
+    <div>
+     	    
+           <table border="2px"> 
+           <tr>
+           <td>    
+        <a href="#pagsano2"><input type="image" id="a1" onClick="pab(this.id)" src="jquery-mobile/images/pabellon/aplanada.jpg" align="left" width="100" height="100" value="0"></a>
+        </td>
+        <td>
+        <p align="left">Aplanada sin incurvación</p>
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+       <a href="#pagsano2"> <input type="image" id="a2" onClick="pab(this.id)" src="jquery-mobile/images/pabellon/superior.jpg" align="left" width="100" height="100" value="8"></a>
+       </td>
+       <td bgcolor="#ACBFFF">
+       <p align="left">Borde superior parcialmente incurvado</p>
+       	</td>
+        </tr>
+        
+        <tr>
+        <td>		
+        <a href="#pagsano2"> <input type="image" id="a3" onClick="pab(this.id)" src="jquery-mobile/images/pabellon/todoborde.jpg" align="left" width="100" height="100" value="16"></a>
+        </td>
+        <td>
+        <p align="left">Todo el borde sup incurvado</p>
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+         <a href="#pagsano2"><input type="image" id="a4" onClick="pab(this.id)" src="jquery-mobile/images/pabellon/incurvadopabellon.jpg" align="left" width="100" height="100" value="24"></a>
+         </td>
+         <td bgcolor="#ACBFFF">
+         <p align="left">Pabellón totalmente incurvado</p>
+     	</td>
+        </tr>
+        </table>
+     </div>
+
+
+   
+           
+ <center> 
+      <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+     </div>
+     
+</center>
+
+
+
+ <div data-role="page" id="pagsano2" data-add-back-btn="true" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<h1>TAMAÑO DE GLÁNDULA</h1>
+     </div>
+     
+
+     <div>
+    
+     	<table border="2px"> 
+           <tr>
+           <td>
+   		<a href="#pagsano3"><input type="image" id="b1" onClick="pab(this.id)" src="jquery-mobile/images/glandula/palpable.jpg" align="left" width="100" height="100" value="0"></a>
+        	</td>
+            <td>
+        <p align="left">No palpable</p>
+        	</td>
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagsano3"><input type="image" id="b2" onClick="pab(this.id)" src="jquery-mobile/images/glandula/menor5.jpg"  align="left" width="100" height="100" value="5"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Palpable menor de 5 mm.</p>
+        	</td>
+            </tr>
+            
+        	<tr>
+            <td>
+        <a href="#pagsano3"><input type="image" id="b3" onClick="pab(this.id)" src="jquery-mobile/images/glandula/entre5y10.jpg" align="left" width="100" height="100" value="10"></a>
+        	</td>
+            <td>
+        <p align="left">Palpable entre 5 y 10 mm.</p>
+        	</td>
+        	</tr>
+            
+            <tr>
+            <td>
+        <a href="#pagsano3"><input type="image" id="b4" onClick="pab(this.id)" src="jquery-mobile/images/glandula/mayor10.jpg"  align="left" width="100" height="100" value="15"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Palpable mayor a 10 mm.</p>
+     		</td>
+            </tr>
+       </table>
+     </div>
+     
+           
+ <center>   
+      <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+     </div>
+     
+</center>     
+
+<!-- sano3 -->
+<div data-role="page" id="pagsano3" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<h1>FORMACIÓN DEL PEZÓN</h1>
+     </div>
+     
+
+     <div>
+    
+     	<table border="2px"> 
+        <tr>
+        <td>
+         <div align="center">  <a href="#pagsano2" class="botonhoja" onClick="reply_click(this.id)" id="atras3">ATRAS</a></div>
+        </td>
+        <td>
+       <div align="right"> <a href="#pagcapurro" class="botonhoja" onClick="r()">REGRESAR</a></div>
+        </td>
+        
+        </tr>
+        
+           <tr>
+           <td>
+   		<a href="#pagsano4"><input type="image" id="l1" onClick="pab(this.id)" src="jquery-mobile/images/pezon/apenavicible.jpg" align="left" width="100" height="100" value="0"></a>
+        	</td>
+            <td>
+        <p align="left">Apenas visible sin Areola</p>
+        	</td>
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagsano4"><input type="image" id="l2" onClick="pab(this.id)" src="jquery-mobile/images/pezon/diametro75lineachata.jpg"  align="left" width="100" height="100" value="5"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Diametro menor de 7.5 mm Areola lisa y chata</p>
+        	</td>
+            
+            </tr>
+            
+        	<tr>
+            <td>
+        <a href="#pagsano4"><input type="image" id="l3" onClick="pab(this.id)" src="jquery-mobile/images/pezon/bordenolevantado.jpg" align="left" width="100" height="100" value="10"></a>
+        	</td>
+            <td>
+        <p align="left">Diametro mayor de 7.5 Areola punteada (Borde no elevado)</p>
+        	</td>
+           
+        	</tr>
+            
+            <tr>
+            <td>
+        <a href="#pagsano4"><input type="image" id="l4" onClick="pab(this.id)" src="jquery-mobile/images/pezon/bordelevantado.jpg"  align="left" width="100" height="100" value="15"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Diametro mayor de 7.5 Areola punteada (Borde elevado)</p>
+     		</td>
+            </tr>
+       </table>
+     </div>
+     
+       
+       <h4><div align="center">SELECCIONADO</div></h4>
+        <h4><div id="f" align="center">0</div></h4>
+           
+ <center>   
+      <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+     </div>
+     
+</center>     
+<!-- sano4 -->
+
+
+ <div data-role="page" id="pagsano4" data-add-back-btn="true" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<h1>TEXTURA DE LA PIEL</h1>
+     </div>
+     
+
+     <div>
+     	<table border="2px"> 
+           <tr>
+           <td>
+   		<a href="#pagsano5"><input type="image" id="c1" onClick="pab(this.id)" src="jquery-mobile/images/texturapiel/muyfina.jpg" align="left" width="100" height="100"></a>
+        	</td>
+            <td>
+        <p align="left">Muy fina gelatinosa</p>
+        	</td>
+            </tr>
+        
+        	<tr>
+            <td>
+        <a href="#pagsano5"><input type="image" id="c2" onClick="pab(this.id)" src="jquery-mobile/images/texturapiel/finalisa.jpg" align="left" width="100" height="100" value="5"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Fina lisa</p>
+        	</td>
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagsano5"><input type="image" id="c3" onClick="pab(this.id)" src="jquery-mobile/images/texturapiel/masgruesa.jpg" align="left" width="100" height="100" value="10"></a>
+        	</td>
+            <td>
+            <p align="left">Mas gruesa discreta descamación superficial</p>
+        	</td>
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagsano5"><input type="image" id="c4" onClick="pab(this.id)" src="jquery-mobile/images/texturapiel/gruesagrietas.jpg" align="left" width="100" height="100" value="15"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Gruesa grietas superficiales descamación de manos y pies</p>
+        	</td>
+            </tr>
+            
+            <tr>
+            <td>
+         <a href="#pagsano5"><input type="image" id="c5" onClick="pab(this.id)" src="jquery-mobile/images/texturapiel/gruesagrietasape.jpg" align="left" width="100" height="100" value="20"></a>
+         	</td>
+            <td>
+         <p align="left">Gruesa grieta profundas apergaminadas</p>
+         	</td>
+            </tr>
+            </table>
+     </div>
+     
+           
+<center>
+      <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+     </div>
+     
+</center>     
+
+
+<div data-role="page" id="pagsano5" data-add-back-btn="true" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<h1>PLIEGUES PLANTARES</h1>
+     </div>
+     
+
+     <div">
+       <table border="2px"> 
+           <tr>
+           <td>
+   		<a href="#pagres"><input type="image" id="d1" onClick="pab(this.id)" src="jquery-mobile/images/plantares/sinpliegues.jpg" align="left" width="100" height="100" value="0"></a>
+        	</td>
+            <td>
+        <p align="left">Sin pliegues</p>
+        	</td>
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagres"><input type="image" id="d2" onClick="pab(this.id)" src="jquery-mobile/images/plantares/marcasmaldefinidas.jpg" align="left" width="100" height="100" value="5"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Marcas mal definidas en la mitad anterior</p>
+        	</td>
+            </tr>
+        
+        	<tr>
+            <td>
+        <a href="#pagres"><input type="image" id="d3" onClick="pab(this.id)" src="jquery-mobile/images/plantares/marcasbiendefinidas.jpg" align="left" width="100" height="100" value="10"></a>
+        	</td>
+            <td>
+        <p align="left">Marcas bien definidas en la 1/2 anterior, surcos en 1/2 anterior</p>
+        	</td>
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagres"><input type="image" id="d4" onClick="pab(this.id)" src="jquery-mobile/images/plantares/surcos.jpg" align="left" width="100" height="100" value="15"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Surcos en la mitad anterior</p>
+        	</td>
+            </tr>
+            
+           	<tr>
+            <td> 
+         <a href="#pagres"><input type="image" id="d5" onClick="pab(this.id)" src="jquery-mobile/images/plantares/surcosenmas.jpg" align="left" width="100" height="100" value="20"></a>
+         	</td>
+            <td>
+          <p align="left">Surcos en mas de la mitad anterior</p>
+     		</td>
+            </tr>
+      </table>
+                
+<center>
+      <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+     </div>
+     
+     </div> 
+</center>     
+
+
+<div data-role="page" id="pagres" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<h1>RESULTADO</h1>
+    </div>
+    <div>
+    <center>
+    <br>
+    
+   <h3> <div id="valortotal">0</div></h3>
+    
+    <a href="#pagcapurro" class="proyecto" onClick="r()">REGRESAR</a>
+   
+    </center>
+    
+    </div>
+     <br>
+  	 <center>
+    	<div data-role="footer" data-theme="a">
+   			<h4>AREA DE SALUD</h4>
+	   </div>
+ </div>
+	</center>
+<!--------------------------------------BOTON REGRESAR--------------------------------------------------->
+
+<script language="javascript">
+function r(paguina)
+{
+	
+				var bot=document.getElementById("botfin").text
+			if (bot=="SEGUIR")
+			{
+				
+				var a=document.getElementById("p").innerHTML;
+				var b=document.getElementById("t").innerHTML;
+				var c=document.getElementById("f50").innerHTML;
+				var d=document.getElementById("tp").innerHTML;
+				var e=document.getElementById("pp").innerHTML;
+				
+				var suma=parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d)+parseInt(e);
+				document.getElementById("valortot").innerHTML=suma;
+				
+				window.location=("#pagdep6");	
+				document.getElementById("botfin").innerHTML="INICIO";		
+			}else{
+	
+				window.location=('#page');
+
+			}
+
+	
+}
+</script>
+<!-----------------------------------SCRIPT REGRESAR------------------------------------------------------------->
+<script>
+function confirmar()
+{
+	var confirmar=confirm("¿DESEAS REGRESAR AL INICIO?")
+	if(confirmar)
+	{
+//		alert("SI");
+	window.location=('#page');	
+	}
+}
+</script>
+<!------------------------------------------limpiar capurro------------------------------------------------------->
+<script>
+function limpiarcapurro()
+{
+		a=document.getElementById("valortotal").innerHTML ="";
+		a=document.getElementById("valortot").innerHTML ="";
+		document.getElementById("t").innerHTML="";
+		document.getElementById("f50").innerHTML="";
+		document.getElementById("tp").innerHTML="";
+		document.getElementById("sg").innerHTML="";
+		document.getElementById("pp").innerHTML="";
+		document.getElementById("sb").innerHTML="";
+		document.getElementById("p").innerHTML="";
+		document.getElementById("parte").innerHTML="";
+}
+</script>
+
+		<!--------------------------------------------- DEPRIMIDO-------------------------------------------------->
+
+		        
+        <div data-role="page" id="pagdep" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<p align="center">FORMA DE LA OREJA(PABELLÓN)</p>
+     </div>
+
+	
+    <div>
+     	    
+           <table border="2px"> 
+           <tr>
+           <td>
+            <div align="center">  <a href="#page" class="botonhoja" onClick="reply_click(this.id)" id="atras1">ATRAS</a></div>
+           </td>
+           </tr>
+           <tr>
+           <td> 
+        <a href="#pagdep2"><input type="image" id="e1" onClick="capdep(this.id)" src="jquery-mobile/images/pabellon/aplanada.jpg" align="left" width="100" height="100" value="0"></a>
+        </td>
+        <td>
+        <p align="left">Aplanada sin incurvación</p>
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+       <a href="#pagdep2"> <input type="image" id="e2" onClick="capdep(this.id)" src="jquery-mobile/images/pabellon/superior.jpg" align="left" width="100" height="100" value="8"></a>
+       </td>
+       <td bgcolor="#ACBFFF">
+       <p align="left">Borde superior parcialmente incurvado</p>
+       	</td>
+        
+        </tr>
+        
+        <tr>
+        <td>		
+        <a href="#pagdep2"> <input type="image" id="e3" onClick="capdep(this.id)" src="jquery-mobile/images/pabellon/todoborde.jpg" align="left" width="100" height="100" value="16"></a>
+        </td>
+        <td>
+        <p align="left">Todo el borde sup incurvado</p>
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+         <a href="#pagdep2"><input type="image" id="e4" onClick="capdep(this.id)" src="jquery-mobile/images/pabellon/incurvadopabellon.jpg" align="left" width="100" height="100" value="24"></a>
+         </td>
+         <td bgcolor="#ACBFFF">
+         <p align="left">Pabellón totalmente incurvado</p>
+     	</td>
+        </tr>
+        </table>
+        
+        
+         <h4><div align="center">SELECCIONADO</div></h4>
+        <h4><div id="p" align="center">0</div></h4>
+     </div>
+
+          
+ <center> 
+      <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+     </div>
+     
+</center>
+
+<!-----------------------------------------------TAMAÑO DE GLANDULA 2 ------------------------------------------------>
+
+ <div data-role="page" id="pagdep2" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<p align="center">TAMAÑO DE LA GLÁNDULA</p>
+     </div>
+     
+
+     <div>
+    
+     	<table border="2px"> 
+           <tr>
+           <td>
+            <div align="center">  <a href="#pagdep" class="botonhoja" onClick="reply_click(this.id)" id="atras2">ATRAS</a></div>
+           </td>
+           <td>
+            <div align="right"><a href="javascript:confirmar()" class="botonhoja">REGRESAR</a></div>
+           </td>
+           </tr>
+           
+           <tr>
+           <td>
+   		<a href="#pagdep3"><input type="image" id="f1" onClick="capdep(this.id)" src="jquery-mobile/images/glandula/palpable.jpg" align="left" width="100" height="100" value="0"></a>
+        	</td>
+            <td>
+        <p align="left">No palpable</p>
+        	</td>
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagdep3"><input type="image" id="f2" onClick="capdep(this.id)" src="jquery-mobile/images/glandula/menor5.jpg"  align="left" width="100" height="100" value="5"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Palpable menor de 5 mm.</p>
+        	</td>
+            
+            </tr>
+            
+        	<tr>
+            <td>
+        <a href="#pagdep3"><input type="image" id="f3" onClick="capdep(this.id)" src="jquery-mobile/images/glandula/entre5y10.jpg" align="left" width="100" height="100" value="10"></a>
+        	</td>
+            <td>
+        <p align="left">Palpable entre 5 y 10 mm.</p>
+        	</td>
+            
+        	</tr>
+            
+            <tr>
+            <td>
+        <a href="#pagdep3"><input type="image" id="f4" onClick="capdep(this.id)" src="jquery-mobile/images/glandula/mayor10.jpg"  align="left" width="100" height="100" value="15"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Palpable mayor a 10 mm.</p>
+     		</td>
+            </tr>
+       </table>
+     </div>
+     
+     
+      	<h4><div align="center">SELECCIONADO</div></h4>
+        <h4><div id="t" align="center">0</div></h4>
+           
+ <center>   
+      <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+     </div>
+     
+</center>     
+
+<!--------------------------------------------FORMACION DEL PEZON 3----------------------------------------------->
+
+<div data-role="page" id="pagdep3" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<p align="center">FORMACIÓN DEL PEZÓN</p>
+     </div>
+     
+
+     <div>
+    
+     	<table border="2px"> 
+        <tr>
+        <td>
+         <div align="center">  <a href="#pagdep2" class="botonhoja" onClick="reply_click(this.id)" id="atras3">ATRAS</a></div>
+        </td>
+        <td>
+       <div align="right"> <a href="javascript:confirmar()" class="botonhoja">REGRESAR</a></div>
+        </td>
+        
+        </tr>
+        
+           <tr>
+           <td>
+   		<a href="#pagdep4"><input type="image" id="g1" onClick="capdep(this.id)" src="jquery-mobile/images/pezon/apenavicible.jpg" align="left" width="100" height="100" value="0"></a>
+        	</td>
+            <td>
+        <p align="left">Apenas visible sin Areola</p>
+        	</td>
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagdep4"><input type="image" id="g2" onClick="capdep(this.id)" src="jquery-mobile/images/pezon/diametro75lineachata.jpg"  align="left" width="100" height="100" value="5"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Diametro menor de 7.5 mm Areola lisa y chata</p>
+        	</td>
+            
+            </tr>
+            
+        	<tr>
+            <td>
+        <a href="#pagdep4"><input type="image" id="g3" onClick="capdep(this.id)" src="jquery-mobile/images/pezon/bordenolevantado.jpg" align="left" width="100" height="100" value="10"></a>
+        	</td>
+            <td>
+        <p align="left">Diametro mayor de 7.5 Areola punteada (Borde no elevado)</p>
+        	</td>
+           
+        	</tr>
+            
+            <tr>
+            <td>
+        <a href="#pagdep4"><input type="image" id="g4" onClick="capdep(this.id)" src="jquery-mobile/images/pezon/bordelevantado.jpg"  align="left" width="100" height="100" value="15"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Diametro mayor de 7.5 Areola punteada (Borde elevado)</p>
+     		</td>
+            </tr>
+       </table>
+     </div>
+     
+       
+       <h4><div align="center">SELECCIONADO</div></h4>
+        <h4><div id="f50" align="center">0</div></h4>
+           
+ <center>   
+      <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+     </div>
+     
+</center>     
+
+<!--------------------------------------------TEXTURA DE LA PIEL 4------------------------------------------------>
+
+ <div data-role="page" id="pagdep4" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<p align="center">TEXTURA DE LA PIEL</p>
+     </div>
+     
+
+     <div>
+     	<table border="2px"> 
+           <tr>
+           <tr>
+           <td>
+           <div align="center">  <a href="#pagdep3" class="botonhoja" onClick="reply_click(this.id)" id="atras4">ATRAS</a></div>
+           </td>
+           <td>
+            <div align="right"><a href="javascript:confirmar()" class="botonhoja">REGRESAR</a></div>
+           </td>
+           </tr>
+           <td>
+   		<a href="#pagdep5"><input type="image" id="h1" onClick="capdep(this.id)" src="jquery-mobile/images/texturapiel/muyfina.jpg" align="left" width="100" height="100"></a>
+        	</td>
+            <td>
+        <p align="left">Muy fina gelatinosa</p>
+        	</td>
+            </tr>
+        
+        	<tr>
+            <td>
+        <a href="#pagdep5"><input type="image" id="h2" onClick="capdep(this.id)" src="jquery-mobile/images/texturapiel/finalisa.jpg" align="left" width="100" height="100" value="5"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Fina lisa</p>
+        	</td>
+            
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagdep5"><input type="image" id="h3" onClick="capdep(this.id)" src="jquery-mobile/images/texturapiel/masgruesa.jpg" align="left" width="100" height="100" value="10"></a>
+        	</td>
+            <td>
+            <p align="left">Mas gruesa discreta descamación superficial</p>
+        	</td>
+           
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagdep5"><input type="image" id="h4" onClick="capdep(this.id)" src="jquery-mobile/images/texturapiel/gruesagrietas.jpg" align="left" width="100" height="100" value="15"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Gruesa grietas superficiales descamación de manos y pies</p>
+        	</td>
+            </tr>
+            
+            <tr>
+            <td>
+         <a href="#pagdep5"><input type="image" id="h5" onClick="capdep(this.id)" src="jquery-mobile/images/texturapiel/gruesagrietasape.jpg" align="left" width="100" height="100" value="20"></a>
+         	</td>
+            <td>
+         <p align="left">Gruesa grieta profundas apergaminadas</p>
+         	</td>
+            </tr>
+            </table>
+     </div>
+    
+     	<h4><div align="center">SELECCIONADO</div></h4>
+        <h4><div id="tp" align="center">0</div></h4>
+           
+           
+<center>
+      <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+     </div>
+     
+</center>     
+  
+  
+  <!------------------------------------------PLIEGUES PLANTALES 5------------------------------------------------->
+
+<div data-role="page" id="pagdep5" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<p align="center">PLIEGUES PLANTARES</p>
+     </div>
+     
+
+     <div">
+       <table border="2px"> 
+       <tr>
+       <td>
+       <div align="center">  <a href="#pagdep4" class="botonhoja" onClick="reply_click(this.id)" id="atras5">ATRAS</a></div>
+       </td>
+       <td>
+      <div align="right"> <a href="javascript:confirmar()" class="botonhoja">REGRESAR</a></div>
+       </td>
+       </tr>
+           <tr>
+           <td>
+   		<a href="#pagresdep"><input type="image" id="i1" onClick="capdep(this.id)" src="jquery-mobile/images/plantares/sinpliegues.jpg" align="left" width="100" height="100" value="0"></a>
+        	</td>
+            <td>
+        <p align="left">Sin pliegues</p>
+        	</td>
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagresdep"><input type="image" id="i2" onClick="capdep(this.id)" src="jquery-mobile/images/plantares/marcasmaldefinidas.jpg" align="left" width="100" height="100" value="5"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Marcas mal definidas en la mitad anterior</p>
+        	</td>
+            </tr>
+        
+        	<tr>
+            <td>
+        <a href="#pagresdep"><input type="image" id="i3" onClick="capdep(this.id)" src="jquery-mobile/images/plantares/marcasbiendefinidas.jpg" align="left" width="100" height="100" value="10"></a>
+        	</td>
+            <td>
+        <p align="left">Marcas bien definidas en la 1/2 anterior, surcos en 1/2 anterior</p>
+        	</td>
+           
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagresdep"><input type="image" id="i4" onClick="capdep(this.id)" src="jquery-mobile/images/plantares/surcos.jpg" align="left" width="100" height="100" value="15"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Surcos en la mitad anterior</p>
+        	</td>
+            </tr>
+            
+           	<tr>
+            <td> 
+         <a href="#pagresdep"><input type="image" id="i5" onClick="capdep(this.id)" src="jquery-mobile/images/plantares/surcosenmas.jpg" align="left" width="100" height="100" value="20"></a>
+         	</td>
+            <td>
+          <p align="left">Surcos en mas de la mitad anterior</p>
+     		</td>
+            </tr>
+      </table>
+      
+        <h4><div align="center">SELECCIONADO</div></h4>
+        <h4><div id="pp" align="center">0</div></h4>
+           
+<center>
+      <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+     </div>
+     
+     </div> 
+</center>     
+
+<!--------------------------------------------SIGNO DE LA BUFANDA 6--------------------------------------------->
+
+
+ <div data-role="page" id="pagdep6" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<p align="center">SIGNO DE LA BUFANDA</p>
+     </div>
+     
+
+     <div>
+     	<table border="2px"> 
+           <tr>
+           <td>
+   		<a href="#pagdep7"><input type="image" id="j1" onClick="capdep(this.id)" src="jquery-mobile/images/bufanda/alcanzalineaauxiliar.jpg" align="left" width="100" height="100"></a>
+        	</td>
+            <td>
+        <p align="left">El codo queda a nivel del pezón opuesto</p>
+        	</td>
+            </tr>
+        
+        	<tr>
+            <td>
+        <a href="#pagdep7"><input type="image" id="j2" onClick="capdep(this.id)" src="jquery-mobile/images/bufanda/lineaauxiliaranterior.jpg" align="left" width="100" height="100" value="5"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">El codo queda a nivel del apéndice xifoides</p>
+        	</td>
+            
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagdep7"><input type="image" id="j3" onClick="capdep(this.id)" src="jquery-mobile/images/bufanda/alcanzalineamedia.jpg" align="left" width="100" height="100" value="10"></a>
+        	</td>
+            <td>
+            <p align="left">El codo queda a nivel del pezón del mismo lado</p>
+        	</td>
+           
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagdep7"><input type="image" id="j4" onClick="capdep(this.id)" src="jquery-mobile/images/bufanda/alcanzalineamedia1.jpg" align="left" width="100" height="100" value="15"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">El codo queda en la línea axila del mismo lado</p>
+        	</td>
+            </tr>
+                
+            </table>
+     </div>
+     
+     	
+        <h4 align="left"><div align="center">SELECCIONADO</div></h4>
+        <h4 align="left"><div id="sb" align="center">0</div></h4>
+           
+<center>
+      <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+     </div>
+     
+</center>     
+  
+  <!-------------------------------------------SIGNO CABEZA EN GOTA 7---------------------------------------------->
+    
+     <div data-role="page" id="pagdep7" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<p align="center">SIGNO CABEZA EN GOTA</p>
+     </div>
+     
+
+     <div>
+     	<table border="2px"> 
+        <tr>
+        <td>
+         <div align="center">  <a href="#pagdep6" class="botonhoja" onClick="reply_click(this.id)" id="atras7">ATRAS</a></div>
+        </td>
+        <td>
+        <div align="right"><a href="javascript:confirmar()" class="botonhoja">REGRESAR</a></div>
+        </td>
+        </tr>
+           <tr>
+           <td>
+   		<a href="#pagresdep"><input type="image" id="k1" onClick="capdep(this.id)" src="jquery-mobile/images/gota/def.jpg" align="left" width="100" height="100"></a>
+        	</td>
+            <td>
+        <p align="left">Deflexión total de la cabeza álgunos mayores de 270°</p>
+        	</td>
+            </tr>
+        
+        	<tr>
+            <td>
+        <a href="#pagresdep"><input type="image" id="k2" onClick="capdep(this.id)" src="jquery-mobile/images/gota/deflexion.jpg"  align="left" width="100" height="100" value="5"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">control céfatico parcial, angulo entre 180°-270°</p>
+        	</td>
+            
+            </tr>
+                        
+            <tr>
+            <td>
+        <a href="#pagresdep"><input type="image" id="k3" onClick="capdep(this.id)" src="jquery-mobile/images/gota/180gradaos.jpg" align="left" width="100" height="100" value="10"></a>
+        	</td>
+            <td>
+            <p align="left">Capaz de mantener cabeza en linea con el cuerpo 180°</p>
+        	</td>
+           
+            </tr>
+            
+            <tr>
+            <td>
+        <a href="#pagresdep"><input type="image" id="k4" onClick="capdep(this.id)" src="jquery-mobile/images/gota/123scsdf.jpg" align="left" width="100" height="100" value="15"></a>
+        	</td>
+            <td bgcolor="#ACBFFF">
+        <p align="left">Lleva la cabeza anterior al cuerpo ángulo menor 180°</p>
+        	</td>
+            </tr>
+                
+            </table>
+     </div>
+     
+    
+     	<h4><div align="center">SELECCIONADO</div></h4>
+        <h4><div id="sg" align="center">0</div></h4>
+     
+           
+<center>
+      <div data-role="footer" data-theme="a">
+   	<h4>AREA DE SALUD</h4>
+   </div>
+     </div>
+     
+</center>     
+        
+   <!-----------------------------------RESULTADO CAPURRO------------------------------------------------------->     
+        
+        <div data-role="page" id="pagresdep" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<p align="center">RESULTADO</p>
+    </div>
+    <div>
+    <center>
+    <br>
+     <h4> <div align="center" id="parte"></div></h4>
+      
+   	<font color="#000000"><h3 style="background-color:#FF0"> <div id="valortot">0</div></h3></font>
+    
+     <a href="#paguina.html" class="botonhoja" onClick="reply_click(this.id)" id="atras8">ATRAS</a>
+     
+    <a href="paguina.html" class="botonhoja" id="botfin" onClick="r(this.href);return false">REGRESAR</a>
+    
+    <br>
+    <font color="#FFFFFF"><h3 align="center" id="capurroclasificacion" style="background-color:#F00"> </h3></font>
+    
+    </center>
+    
+    </div>
+     <br>
+  	 <center>
+    	<div data-role="footer" data-theme="a">
+   			<h4>AREA DE SALUD</h4>
+	   </div>
+ </div>
+	</center>
+
+
+<!----------------------------------- CAPURRO ATRAS --------------------------------------------------------->
+
+
+<script type="text/javascript">
+function reply_click(clicked_id)
+{
+    id=(clicked_id);
+		switch(id)
+		{
+			case "atras1":
+			 	document.getElementById("p").innerHTML="";
+		//	alert(a);
+			case "atras8":
+			boton=document.getElementById("botfin").text;
+			rr=document.getElementById("parte").innerHTML;
+			
+			if (rr=="2 PARTE")
+			{				
+				var a=document.getElementById("p").innerHTML;
+				var b=document.getElementById("t").innerHTML;
+				var c=document.getElementById("f50").innerHTML;
+				var d=document.getElementById("tp").innerHTML;
+				var e=document.getElementById("pp").innerHTML;
+				var f=document.getElementById("sb").innerHTML;
+				var g = document.getElementById("sg").innerHTML;
+				
+				var suma=parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d)+parseInt(e)+parseInt(f)+parseInt(g)
+				suma=suma-parseInt(g)
+				document.getElementById("valortot").innerHTML =suma;
+				window.location=('#pagdep7');
+			}else if(rr=="1 PARTE")
+			{
+					window.location=('#pagdep5');
+				var a=document.getElementById("p").innerHTML;
+				var b=document.getElementById("t").innerHTML;
+				var c=document.getElementById("f50").innerHTML;
+				var d=document.getElementById("tp").innerHTML;
+				var e=document.getElementById("pp").innerHTML;
+			
+				
+				var suma=parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d)+parseInt(e);
+				suma=suma-parseInt(e)
+				document.getElementById("valortot").innerHTML =suma;
+			}
+				
+			
+				
+				break;
+			case "atras2":
+				var i = document.getElementById("p").innerHTML;
+				var tot=document.getElementById("valortot").innerHTML;
+				valor=(parseInt(tot)-parseInt(i));
+				document.getElementById("valortot").innerHTML =valor;
+			//	alert(valor);
+				document.getElementById("t").innerHTML="";
+			//	alert(a);
+				break;
+			case "atras3":
+				var i = document.getElementById("t").innerHTML;
+				var tot=document.getElementById("valortot").innerHTML;
+				valor=(parseInt(tot)-parseInt(i));
+				document.getElementById("valortot").innerHTML =valor;
+		//		alert(valor);
+				document.getElementById("f50").innerHTML="";
+				//alert(a);
+				break;
+			case "atras4":
+				var i = document.getElementById("f50").innerHTML;
+				var tot=document.getElementById("valortot").innerHTML;
+				valor=(parseInt(tot)-parseInt(i));
+				document.getElementById("valortot").innerHTML =valor;
+			//	alert(valor);
+				document.getElementById("tp").innerHTML="";
+			//	alert(a);
+				break;
+			case "atras5":
+				var i = document.getElementById("tp").innerHTML;
+				var tot=document.getElementById("valortot").innerHTML;
+				valor=(parseInt(tot)-parseInt(i));
+				document.getElementById("valortot").innerHTML =valor;
+			//	alert(valor);
+				document.getElementById("pp").innerHTML="";
+				//alert(a);
+				break;
+			case "atras6":
+				var i = document.getElementById("pp").innerHTML;
+				var tot=document.getElementById("valortot").innerHTML;
+				valor=(parseInt(tot)-parseInt(i));
+				document.getElementById("valortot").innerHTML =valor;
+			//	alert(valor);
+				document.getElementById("sb").innerHTML="";
+			//	alert(a);
+				break;
+			case "atras7":
+				var i = document.getElementById("sb").innerHTML;
+				var tot=document.getElementById("valortot").innerHTML;
+				valor=(parseInt(tot)-parseInt(i));
+				document.getElementById("valortot").innerHTML =valor;
+			//	alert(valor);
+				document.getElementById("sg").innerHTML="";
+				//alert(a);
+				break;
+				
+			
+		}
+}
+</script>
+
+
+
+<!----------------------------------------------------- SCRIPT CAPURRO SUMA--------------------------------------->
+
+<script type="text/livescript">
+function capdep(clicked_id)
+{
+	var pabellon=(clicked_id);
+	//alert(pabellon);
+	var glandula=(clicked_id);
+	
+	var valpabellon;
+	var valglandula;
+	var suma;
+	var s;
+	
+	switch(pabellon)
+		{
+		case "e1":
+			suma=0
+			s=0
+			document.getElementById("p").innerHTML =0;
+			break;
+		case "e2":
+			suma=8
+			document.getElementById("p").innerHTML =8;
+			s=0
+			break;
+		case "e3":
+			suma=16
+			document.getElementById("p").innerHTML =16;
+			s=0
+			break;
+		case "e4":
+			suma=24
+			document.getElementById("p").innerHTML = 24;
+			s=0
+			break;
+		case "f1":
+			suma=0
+			document.getElementById("t").innerHTML =0;
+			s=0
+			break;
+		case "f2":
+			suma=5
+			document.getElementById("t").innerHTML =5;
+			s=0
+			break;
+		case "f3":
+			suma=10
+			document.getElementById("t").innerHTML=10;
+			s=0
+			break;
+		case "f4":
+			suma=15
+			document.getElementById("t").innerHTML=15;
+			s=0
+			break;
+		case "g1":
+			suma=0
+			document.getElementById("f50").innerHTML=0;
+			s=0
+			break;
+		case "g2":
+			suma=5
+			document.getElementById("f50").innerHTML=5;
+			s=0
+			break;
+		case "g3":
+			suma=10
+			document.getElementById("f50").innerHTML=10;
+			s=0
+			break;
+		case "g4":
+			suma=15
+			document.getElementById("f50").innerHTML=15;
+			s=0
+			break;
+		case "g5":
+			s=0
+			document.getElementById("f50").innerHTML=20;
+		
+			suma=20
+			break;
+		case "h1":
+			suma=0
+			document.getElementById("tp").innerHTML=0;
+			s=0
+			break;
+		case "h2":
+			suma=5
+			document.getElementById("tp").innerHTML=5;
+			s=0
+			break;
+		case "h3":
+			suma=10
+			document.getElementById("tp").innerHTML =10;
+			s=0
+			break;
+		case "h4":
+			suma=15
+			document.getElementById("tp").innerHTML =15;
+			s=0
+			break;
+		case "h5":
+			suma=20
+			document.getElementById("tp").innerHTML =20;
+			s=0
+			break;
+		case "i1":
+			suma=0
+			
+			document.getElementById("pp").innerHTML =0;
+			document.getElementById("parte").innerHTML="1 PARTE";
+			s=1
+			break;
+		case "i2":
+			suma=5
+			document.getElementById("pp").innerHTML =5;
+			s=1
+			document.getElementById("parte").innerHTML="1 PARTE";
+			break;
+		case "i3":
+			suma=10
+			document.getElementById("pp").innerHTML =10;
+			document.getElementById("parte").innerHTML="1 PARTE";
+			s=1
+			break;
+		case "i4":
+			suma=15
+			document.getElementById("pp").innerHTML =15;
+			document.getElementById("parte").innerHTML="1 PARTE";
+			s=1
+			break;
+		case "i5":
+			document.getElementById("parte").innerHTML="1 PARTE";
+			suma=20
+			document.getElementById("pp").innerHTML =20;
+			s=1
+			break;
+		case "j1":
+			suma=0
+			document.getElementById("sb").innerHTML =0;
+			s=0
+			break;
+		case "j2":
+			suma=6
+			document.getElementById("sb").innerHTML =6;
+			s=0
+			break;
+		case "j3":
+			s=0
+			document.getElementById("sb").innerHTML =12;
+			suma=12
+			break;
+		case "j4":
+			suma=18
+			document.getElementById("sb").innerHTML =18;
+			s=0
+			break;
+		case "k1":
+			document.getElementById("parte").innerHTML="2 PARTE";
+			suma=0
+			document.getElementById("sg").innerHTML =0;
+			s=1
+			break;
+		case "k2":
+			document.getElementById("parte").innerHTML="2 PARTE";
+			suma=4
+			document.getElementById("sg").innerHTML =4;
+			s=1
+			break;
+		case "k3":
+			document.getElementById("parte").innerHTML="2 PARTE";
+			suma=8
+			document.getElementById("sg").innerHTML =8;
+			s=1
+			break;
+		case "k4":
+			document.getElementById("parte").innerHTML="2 PARTE";
+			suma=12
+			document.getElementById("sg").innerHTML =12;
+			s=1
+			break;
+		}
+		
+				var aa=document.getElementById("p").innerHTML;
+				var bb=document.getElementById("t").innerHTML;
+				var cc=document.getElementById("f50").innerHTML;
+				var dd=document.getElementById("tp").innerHTML;
+				var ee=document.getElementById("pp").innerHTML;
+				var ff=document.getElementById("sb").innerHTML;
+				var gg= document.getElementById("sg").innerHTML;
+		
+				if (aa=="")
+				{
+					aa=0
+				}
+				
+				if (bb=="")
+				{
+					bb=0	
+				}
+				
+				if (cc=="")
+				{
+					cc=0
+				}	
+				
+				if (dd=="")
+				{
+					dd=0	
+				}
+				
+				if (ee=="")
+				{
+					ee=0	
+				}
+				
+				if (ff=="")
+				{
+					ff=0	
+				}
+				
+				if (gg=="")
+				{
+					gg=0	
+				}
+	
+	
+		suma=parseInt(aa)+parseInt(bb)+parseInt(cc)+parseInt(dd)+parseInt(ee)+parseInt(ff)+parseInt(gg);
+		
+		if (s==1)
+	{
+		
+		t=(parseInt(suma)+204)
+		var r=t/7
+		
+		r=r.toString();
+				
+		var numcaracteres = r.length;
+		var num=parseInt(numcaracteres);
+		
+		var cadena = r.charAt(3);
+		
+			var cad=parseInt(cadena);
+			
+		if (cad==7)
+		{
+			var mod=0
+			r=parseInt(r)+1
+		} else if(cad==8)
+		{
+			r=parseInt(r)+1	
+			var mod=1
+		}else{
+			var mod=0;
+			var r =r.substring(0,4); 
+		}
+		if (x==1)
+		{
+			document.getElementById("botfin").innerHTML="INICIO"
+		}
+			
+			r=r.toString();
+			var dd=r.charAt(3)
+			var mm =r.substring(0,2);
+			
+			alert(dd);
+			if (dd=="")
+			{	
+				//mod=mod.toString();
+				dd=mod;	
+			}
+			
+//			if (mod=="")
+	//		{
+		//		dd=0;	
+			//}
+			
+			
+			if (dd==1)
+			{
+				document.getElementById("valortot").innerHTML =mm+" SEMANAS Y "+dd+" DIA";	
+			}else{
+				document.getElementById("valortot").innerHTML =mm+" SEMANAS Y "+dd+" DIAS";
+			}
+			
+			
+			
+			if (r<33)
+			{	
+			var x=1
+				var boton=document.getElementById("botfin").text
+				document.getElementById("botfin").innerHTML="SEGUIR"
+				
+			}else{
+				
+				document.getElementById("botfin").innerHTML="REGRESAR"
+			}
+			var wx=document.getElementById("parte").innerHTML;
+		
+			
+			if (wx=="2 PARTE")
+			{
+				document.getElementById("botfin").innerHTML="REGRESAR"
+			}
+			
+			if(r<32)
+			{
+				document.getElementById("capurroclasificacion").innerHTML="PREMATURO EXTREMO";
+			}
+			else if (r<=34)
+			{
+				document.getElementById("capurroclasificacion").innerHTML="PREMATURO MODERADO";
+			}
+			else if (r<=36)
+			{
+				document.getElementById("capurroclasificacion").innerHTML="PREMATURO LEVE";
+			}else if (r<42)
+			{
+				document.getElementById("capurroclasificacion").innerHTML="TÉRMINO";
+			}else if(r>=42)
+			{
+				document.getElementById("capurroclasificacion").innerHTML="POSTMADURO";
+			}		
+	}	
+}
+</script>
+
+<!---------------------------------------SILVERMAN--------------------------------------------------------------------->
+		  
+<!---------------------------------------DISOCIACIÓN TORACOABDOMINAL 1------------------------------------------------->                
+        <div data-role="page" id="pagsildis" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<p align="center">DISOCIACIÓN TORACOABDOMINAL</p>
+     </div>
+     
+    <div>
+    
+    <table border="2px"> 
+    		<tr>
+            <td>
+            	<div align="center">  <a href="#page" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a></div>
+             </td>          
+            </tr>
+            
+           <tr>
+           <td>
+    		<a href="#pagsilret"><input type="image" id="dissin0" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/chest/chest0.jpg" align="left" width="140" height="80" value="0"></a>
+    		</td>
+            <td>
+            <p>Sincronizado</p>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <a href="#pagsilret"><input type="image" id="disins1" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/chest/lag1.jpg" align="left" width="140" height="80" value="0"></a>
+            </td>
+            <td>
+            <p>En Inspiración</p>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+             <a href="#pagsilret"><input type="image" id="dissie" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/chest/lag1.jpg" align="left" width="140" height="80" value="0"></a>
+            </td>
+            <td>
+            <p>Siempre visible</p>
+            </td>
+            </tr>
+    </table>
+    </div>
+    
+    <h4><div align="center">SELECCIONADO</div></h4>
+        <h4><div id="dtora" align="center">0</div></h4>
+    
+    <div data-role="footer" data-theme="a">
+   			<h4 align="center">AREA DE SALUD</h4>
+	   </div>
+     </div>
+		
+<!-------------------------------------------RETRACCIONES INTERCOSTALES 2---------------------------------------------->
+        
+        <div data-role="page" id="pagsilret" data-theme="a">
+	<div data-role="header" data-theme="a">
+        		<p align="center">RETRACCIONES INTERCOSTALES</p>
+     </div>
+     <div>
+     <table border="2px"> 
+           <tr>
+           <td>
+      		     <div align="center">  <a href="#pagsildis" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a></div>
+           </td>
+           <td>
+            <div align="right"><a href="javascript:confirmar()" class="botonhoja">REGRESAR</a></div>
+           </td>
+           </tr>
+           
+           <tr>
+           <td>
+           		 <a href="#pagsilretrea"><input type="image" id="retsin" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/retracciones/sin0.jpg" align="left" width="140" height="80" value="0"></a>
+           </td>
+           <td>
+           <p>Sin Retracción</p>
+           </td>
+           </tr>
+           
+           <tr>
+           <td>
+           		<a href="#pagsilretrea"><input type="image" id="retsolo" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/retracciones/solo1.jpg" align="left" width="140" height="80" value="0"></a>
+           </td>
+           <td>
+           <p>Solo Visible</p>
+           </td>
+           </tr>
+     		
+            <tr>
+            <td>
+            	<a href="#pagsilretrea"><input type="image" id="retmar" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/retracciones/mar2.jpg" align="left" width="140" height="80" value="0"></a>
+            </td>
+            <td>
+            <p>Marcado</p>
+            </td>
+            </tr>   
+        </table>
+        
+           </div>
+           
+           <h4><div align="center">SELECCIONADO</div></h4>
+        <h4><div id="rint" align="center">0</div></h4>
+        
+            <div data-role="footer" data-theme="a">
+   			<h4 align="center">AREA DE SALUD</h4>
+	   </div>
+       </div>
+<!---------------------------------------------RETRACCION SUBXIFOLDES 3----------------------------------------------->        
+							<div data-role="page" id="pagsilretrea" data-theme="a">
+							<div data-role="header" data-theme="a">
+        					<p align="center">RETRACCIÓN SUBXIFOLDES</p>
+     </div>
+     	<div>
+     	<table border="2px"> 
+  			<tr>
+            <td>
+            <div align="center">  <a href="#pagsilret" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a></div>
+            </td>
+            <td>
+				 <div align="right"><a href="javascript:confirmar()" class="botonhoja">REGRESAR</a></div>            
+            </td>
+            </tr>
+            
+           <tr>
+           <td>
+           		 <a href="#pagsilale"><input type="image" id="retnin" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/RETRACCION/ninguno0.jpg" align="left" width="140" height="80" value="0"></a>
+            </td>
+            <td>
+            <p>Ninguno</p>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            	<a href="#pagsilale"><input type="image" id="retrsolo" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/RETRACCION/solo1.jpg" align="left" width="140" height="80" value="0"></a>
+            </td>
+            <td>
+            <p>Solo Visible</p>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <a href="#pagsilale"><input type="image" id="retrmar" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/RETRACCION/marcado2.jpg" align="left" width="140" height="80" value="0"></a>
+            </td>
+            <td>
+            <p>Marcado</p>
+            </td>
+            </tr>
+            </table>
+           </div>
+           
+           <h4><div align="center">SELECCIONADO</div></h4>
+        <h4><div id="rsub" align="center">0</div></h4>
+        
+            <div data-role="footer" data-theme="a">
+   			<h4 align="center">AREA DE SALUD</h4>
+	   </div>
+     </div>	
+<!---------------------------------------------ALETEO NASAL 4--------------------------------------------------------->
+
+		<div data-role="page" id="pagsilale" data-theme="a">
+							<div data-role="header" data-theme="a">
+        			<p align="center">ALETEO NASAL</p>
+ 
+     			</div>
+                <div>
+                
+                <table border="2px"> 
+                <tr>
+                <td>
+                 	<div align="center">  <a href="#pagsilretrea" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a></div>
+                </td>
+                <td>
+                	 <div align="right"><a href="javascript:confirmar()" class="botonhoja">REGRESAR</a></div>  
+                </td>
+                </tr>
+                
+           <tr>
+           <td>
+           		 <a href="#pagsilquejido"><input type="image" id="alenin" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/aleteo/ninguno0.jpg" align="left" width="140" height="80" value="0"></a>
+            </td>
+            <td>
+            <p>Ninguno</p>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            	<a href="#pagsilquejido"><input type="image" id="alemin" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/aleteo/minimo1.jpg" align="left" width="140" height="80" value="0"></a>
+            </td>
+            <td>
+            <p>Minimo</p>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            	<a href="#pagsilquejido"><input type="image" id="alemar" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/aleteo/marcado2.jpg" align="left" width="140" height="80" value="0"></a>
+            </td>
+            <td>
+            <p>Marcado</p>
+            </td>
+            </tr>
+            
+            </table>    
+          </div>
+                
+                 <h4><div align="center">SELECCIONADO</div></h4>
+        <h4><div id="anas" align="center">0</div></h4>
+        
+            <div data-role="footer" data-theme="a">
+   			<h4 align="center">AREA DE SALUD</h4>
+     </div>
+     </div>
+
+<!------------------------------------------QUEJIDO NASAL 5------------------------------------------------------->
+
+
+	<div data-role="page" id="pagsilquejido" data-theme="a">
+							<div data-role="header" data-theme="a">
+        			<p align="center">QUEJIDO NASAL</p>
+ 
+     			</div>
+                <div>
+                <table border="2px"> 
+                <tr>
+                <td>
+                	<div align="center">  <a href="#pagsilale" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a></div>
+                </td>
+                <td>
+                <div align="right"><a href="javascript:confirmar()" class="botonhoja">REGRESAR</a></div>  
+                </td>
+                </tr>
+                
+           <tr>
+           <td>
+          		<a href="#pagsilres"><input type="image" id="quenin" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/quejido/ninguno0.jpg" align="left" width="140" height="80" value="0"></a>
+           </td>
+           <td>
+           <p>Ninguno</p>
+           </td>
+         	</tr>
+            
+            <tr>
+            <td>
+            	 <a href="#pagsilres"><input type="image" id="quesolo" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/quejido/solo1.jpg" align="left" width="140" height="80" value="0"></a>
+            </td>
+            <td>
+            <p>Solo por esteloscop</p>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            	 <a href="#pagsilres"><input type="image" id="queaudi" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/quejido/audible2.jpg" align="left" width="140" height="80" value="0"></a>
+                 
+            </td>
+            <td>
+            <p>Audible al oido</p>
+            </td>
+            </tr>
+            </table>              
+                         
+                </div>
+                 <h4><div align="center">SELECCIONADO</div></h4>
+        <h4><div id="qnas" align="center">0</div></h4>
+        
+            <div data-role="footer" data-theme="a">
+   			<h4 align="center">AREA DE SALUD</h4>
+        
+         </div>       
+         </div>
+                
+<!-----------------------------------RESULTADO----------------------------------------------------------->
+
+					<div data-role="page" id="pagsilres" data-theme="a">
+							<div data-role="header" data-theme="a">
+        						<p align="center">RESULTADO</p>
+    </div>
+    	<br>
+    	<h3><div align="center" style="background-color:#FF0" id="silpuntos"></div></h3>
+        
+        <center>
+        <a href="#pagsilquejido" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a>
+        
+        <a href="#page" class="botonhoja">REGRESAR</a>
+        </center>
+    
+    	<font color="#FFFFFF"><h3><div align="center" style="background-color:#F00" id="silrango"></div></h3></font>
+    </div>
+                
+<!-----------------------------------SUMA SILVERMAN JAVASCRIPT--------------------------------------------------------->
+<script type="text/livescript">
+function sumapuntossilverman(clicked_id)
+
+{
+	var s=(clicked_id);
+	//alert(s);
+	switch (s)
+		{
+			
+			case "dissin0":
+				document.getElementById("dtora").innerHTML=0;
+				break;
+			case "disins1":
+				document.getElementById("dtora").innerHTML=1;
+				break;
+			case "dissie":
+				document.getElementById("dtora").innerHTML=2;
+				break;
+			case "retsin":
+				document.getElementById("rint").innerHTML=0;
+				break;
+			case "retsolo":
+				document.getElementById("rint").innerHTML=1;
+				break;
+			case "retmar":
+				document.getElementById("rint").innerHTML=2;
+				break;
+			case "retnin":
+				document.getElementById("rsub").innerHTML=0;
+				break;
+			case "retrsolo":
+				document.getElementById("rsub").innerHTML=1;
+				break;
+			case "retrmar":
+				document.getElementById("rsub").innerHTML=2;
+				break;
+			case "alenin":
+				document.getElementById("anas").innerHTML=0;
+				break;
+			case "alemin":
+				document.getElementById("anas").innerHTML=1;
+				break;
+			case "alemar":
+				document.getElementById("anas").innerHTML=2;
+				break;
+			case "quenin":
+				document.getElementById("qnas").innerHTML=0;
+				break;
+			case "quesolo":
+				document.getElementById("qnas").innerHTML=1;
+				break;
+			case "queaudi":
+				document.getElementById("qnas").innerHTML=2;
+				break;
+		}
+		var a=document.getElementById("dtora").innerHTML;
+		var b=document.getElementById("rint").innerHTML;
+		var c=document.getElementById("rsub").innerHTML;
+		var d=document.getElementById("anas").innerHTML;
+		var e=document.getElementById("qnas").innerHTML;
+		
+		var suma=parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d)+parseInt(e);
+		
+		document.getElementById("silpuntos").innerHTML=suma;
+		
+		if (suma==0)
+		{
+			document.getElementById("silrango").innerHTML="Sin Asfixia ni Dificultad Respiratoria";	
+		}else if(suma<=3)
+		{
+			document.getElementById("silrango").innerHTML="Con Dificultad Respiratoria Leve";	
+		}else if(suma<=6)
+		{
+			document.getElementById("silrango").innerHTML="Con Difivultad Respiratoria Moderada";
+		}else if(suma<=10)
+		{
+			document.getElementById("silrango").innerHTML="Con Dificultad Respiratoria Severa";		
+		}
+}
+</script>
+
+<script>
+function limpiarsilverman()
+{
+		document.getElementById("dtora").innerHTML="";
+		document.getElementById("rint").innerHTML="";
+		document.getElementById("rsub").innerHTML="";
+		document.getElementById("anas").innerHTML="";
+		document.getElementById("qnas").innerHTML="";
+		document.getElementById("silrango").innerHTML="";
+		document.getElementById("silpuntos").innerHTML="";
+}
+</script>
+
+</body>
+</html>
