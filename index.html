@@ -28,6 +28,7 @@
         <li><a href="#pagparto" data-transition="slidedown" onClick="limpiarfecha()">FECHA PROBABLE DE PARTO</a></li>
         <li><a href="#pagdep" data-transition="slidedown" onClick="limpiarcapurro()">CAPURRO</a></li>
          <li><a href="#pagsildis" data-transition="slidedown" onClick="limpiarsilverman()">SILVERMAN</a></li>
+         <li><a href="#pagapgar" data-transition="slidedown">APGAR</a></li>
         
         <br>
         <li><a href="#pagacerca" data-transition="slidedown">ACERCA DE</a></li>
@@ -1818,7 +1819,7 @@ function capdep(clicked_id)
 			
 			
 			
-			if (r<33)
+			if (r<35)
 			{	
 			var x=1
 				var boton=document.getElementById("botfin").text
@@ -2215,7 +2216,13 @@ function sumapuntossilverman(clicked_id)
 		
 		var suma=parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d)+parseInt(e);
 		
-		document.getElementById("silpuntos").innerHTML=suma;
+		if (suma==1)
+		{
+			document.getElementById("silpuntos").innerHTML=suma +" PUNTO";
+		}else{
+			document.getElementById("silpuntos").innerHTML=suma +" PUNTOS";	
+		}
+		
 		
 		if (suma==0)
 		{
@@ -2246,5 +2253,110 @@ function limpiarsilverman()
 }
 </script>
 
+
+<!-------------------------------------------APGAR----------------------------------------------------------------->
+
+	<div data-role="page" id="pagapgar" data-theme="a">
+	<div data-role="header" data-theme="a">
+   
+    		
+    		<p align="center">APGAR</p>       
+     </div>
+     
+ <!------------------------------FRECUENCIA CARDIACA--------------------------------------------------------->    
+     <div>
+     	<font size="+2"><label>FRECUENCIA CARDIACA</label></font>
+        <form name="fc">
+       <SELECT NAME="fc" id="fc" class="form_select"> 
+           <p>
+         <OPTION VALUE=0 onClick="apgar()">NO HAY LATIDOS CARDIACOS</OPTION>
+         <option value=1 onClick="apgar()">MENOR A 100</option>
+         <option value=2 onClick="apgar()">MAYOR A 100</option>
+         </p>
+         </SELECT>
+         </form>
+   
+  <!----------------------------ESFURZO RESPIRSTORIO----------------------------------------------------------> 
+     	<font size="+2"><label>ESFUERZO RESPIRATORIO</label></font>
+        <form name="er">
+        <select name="er" id="er" class="form_select">
+        <p>
+        <option value=0 onClick="apgar()">NO HAY RESPIRACIÓN</option>
+        <option value=1 onClick="apgar()">LENTAS O IRREGULARES</option>
+        <option value=2 onClick="apgar()">EL LLANTO ES BUENO</option>
+        </p>
+        </select>
+        </form>
+        
+        
+  <!--------------------------TONO MUSCULAR DEL BEBE-------------------------------------------------------->
+        <font size="+2"><label>TONO MUSCULAR DEL BEBÉ</label></font>
+        <form name="tmdb">
+        <select name="tmdb" id="tmdb" class="form_select">
+        <p>
+        <option value=0 onClick="apgar()">TONO MUSCULAR FLÁCIDO</option>
+        <option value=1 onClick="apgar()">HAY FLEXIÓN DE LAS EXTREMIDADES</option>
+        <option value=2 onClick="apgar()">HAY MOVIMIENTO ACTIVO</option>
+        </p>
+        </select>
+        </form>
+        
+  <!---------------------------REFLEJO DE IRRITABILIDAD--------------------------------------------------------->
+        
+        <font size="+2"><label>REFLEJO DE IRRITABILIDAD</label></font>
+        <form name="rdi">
+        <select name="rdi" id="rdi" class="form_select">
+        <p>
+        <option value=0 onClick="apgar()">NO HAY REFLEJO DE IRRITABLIDAD</option>
+        <option value=1 onClick="apgar()">HAY GESTICULACIONES</option>
+        <option value=2 onClick="apgar()">HAY GESTICULACIONES O TOS, ESTORNUDO O LLANTO VIGOROSO</option>
+        </p>
+        </select>
+        </form>
+        
+        
+  <!------------------------------COLORACION DEL BEBE---------------------------------------------------------->     
+        <font size="+2"><label>COLORACIÓN DEL BEBÉ</label></font>
+        <form name="cdb">
+        <select name="cdb" id="cdb" class="form_select">
+        <p>
+        <option value=0 onClick="apgar()">AZUL PÁLIDO</option>
+        <option value=1 onClick="apgar()">EL CUERPO ES ROSADO Y LAS EXTREMIDADES SON AZULES</option>
+        <option value=2 onClick="apgar()">TODO EL CUERPO ES ROSADO</option>
+        </p>
+        </select>
+        </form>
+        
+        <h3><font color="#000000"><div align="center" style="background-color:#FF0" id="apgarresnum">0 PUNTOS</div></font> </h3>
+        
+		<h3><font color="#FFFFFF"><div align="center" style="background-color:#F00" id="apgarres">ASFIXIA SEVERA. NECESITA MANIOBRAS DE REANIMACIÓN O RESUCITACIÓN</div></font> </h3>
+        
+     </div>
+     </div>
+     
+ <!---------------------------SCRIPT APGAR-------------------------------------------------------------------->
+<script>
+function apgar()
+{
+	var fre=document.getElementById("fc").value;
+	var esf=document.getElementById("er").value;
+	var tmus=document.getElementById("tmdb").value;
+	var ref=document.getElementById("rdi").value;
+	var col=document.getElementById("cdb").value;
+
+		var	suma=parseInt(fre)+parseInt(esf)+parseInt(tmus)+parseInt(ref)+parseInt(col);
+		document.getElementById("apgarresnum").innerHTML=suma;
+		if (suma>=8)
+		{
+			document.getElementById("apgarres").innerHTML="BEBÉ EN BUENAS CONDICIONES";
+		}else if(suma>=5)
+		{
+			document.getElementById("apgarres").innerHTML="PUEDEN SER NECESARIAS ALGUNAS MANIOBRAS PARA AYUDARLO A RESPIRAR";
+		}else if(suma>=0){
+			document.getElementById("apgarres").innerHTML="ASFIXIA SEVERA. NECESITA MANIOBRAS DE REANIMACIÓN O RESUCITACIÓN";
+		}
+	
+} 
+</script>	
 </body>
 </html>
