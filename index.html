@@ -2258,29 +2258,52 @@ function limpiarsilverman()
  <!------------------------------FRECUENCIA CARDIACA--------------------------------------------------------->  
 
 	<div data-role="page" id="pagapgar" data-theme="a">
-	<div data-role="header" data-theme="a">
+		<div data-role="header" data-theme="a">
    
     		
     		<p align="center">FRECUENCIA CARDIACA</p>       
-     </div>
+     	</div>
    
    	<br>
     <br>  
   
-    
+    <div id="opfc">
     	<table border="2px"> 
     		<tr>
             <td>
-            NO HAY LATIDOS CARDIACOS
+           Ausente
             </td>
             <td>
-       <input type="radio" id="rbnolatido">
+      <a href="" onClick="opfcaus()"> <input type="radio" name="grupo1" id="rbfcaus" value="ausente"></a>
        		</td>
+            </tr>
+            
+            <tr>
+            <td>
+            Menor a 100
+            </td>
+            <td>
+      <a href="" onClick="opfcmen()"> <input type="radio" id="rbfcmen" name="grupo1" value="menor100"></a>
+     		</td>
+            </tr>
+            
+            <tr>
+            <td>
+            Mayor a 100
+            </td>
+            <td>
+     <a href="" onClick="opfcmay()"> <input type="radio" id="rbfcmay" name="grupo1" value="mayor100"></a>
+            </td>
             </tr>
             
             </table>
   	
-  	</div>
+    <div align="center">SELECCIONADO</div>
+    
+    <div align="center" id="fc"> </div>
+  	
+    </div>
+    </div>
     
   <!----------------------------ESFURZO RESPIRSTORIO----------------------------------------------------------> 
      	
@@ -2297,8 +2320,30 @@ function limpiarsilverman()
        
         
         
-  <!------------------------------COLORACION DEL BEBE---------------------------------------------------------->     
-
+  <!------------------------------COLORACION DEL BEBE---------------------------------------------------------->
+  
+       
+<!---------------------------------OPERACIONES APGAR-------------------------------------------------------->
 	
+    <script>
+	function opfcaus()
+	{
+		document.getElementById("fc").innerHTML=0;	
+	}
+	</script>
+    
+    <script>
+	function opfcmen()
+	{
+		document.getElementById("fc").innerHTML=1;
+	}
+	</script>
+    
+    <script>
+	function opfcmay()
+	{
+		document.getElementById("fc").innerHTML=2;
+	}
+	</script>
 </body>
 </html>
