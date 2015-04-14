@@ -25,10 +25,10 @@
      </div>
       <div data-role="content" data-theme="a">
      	<ul data-role="listview">
-        <li><a href="#pagparto" data-transition="slidedown" onClick="limpiarfecha()">FECHA PROBABLE DE PARTO</a></li>
-        <li><a href="#pagdep" data-transition="slidedown" onClick="limpiarcapurro()">CAPURRO</a></li>
+         <li><a href="#pagparto" data-transition="slidedown" onClick="limpiarfecha()">FECHA PROBABLE DE PARTO</a></li>
+         <li><a href="#pagdep" data-transition="slidedown" onClick="limpiarcapurro()">CAPURRO</a></li>
          <li><a href="#pagsildis" data-transition="slidedown" onClick="limpiarsilverman()">SILVERMAN</a></li>
-         <li><a href="#pagapgar" data-transition="slidedown">APGAR</a></li>
+         <li><a href="#pagapgar" data-transition="slidedown" onClick="limpiarapgar()">APGAR</a></li>
         
         <br>
         <li><a href="#pagacerca" data-transition="slidedown">ACERCA DE</a></li>
@@ -2271,11 +2271,16 @@ function limpiarsilverman()
    
             <center>
        <!-------------------------------FC---------------------------------------------->
-         <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnfcaus">Ausente</a><br><br><br>
+         
+          <p align="center"><a href="#page" class="botonhoja" id="atras1">ATRAS</a><HR width=100% align="center"><br>
+         
+         <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnfcaus">Ausente</a><br><br><HR width=100% align="center"><br>
+         
+         
           
-          <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnfcmen">Menor a 100</a><br><br><br>
+          <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnfcmen">Menor a 100</a><br><br><HR width=100% align="center"><br>
            
-          <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnfcmay">Mayor a 100</a><br><br><br>
+          <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnfcmay">Mayor a 100</a><br><br><HR width=100% align="center"><br>
           
     
          
@@ -2303,13 +2308,15 @@ function limpiarsilverman()
        
         
         <div>
+          <p align="center"><a href="#page" class="botonhoja" id="atras1">ATRAS</a><a href="javascript:confirmar()" class="botonhoja" id="atras1">REGRESAR</a><HR width=100% align="center"><br>
+          
          
           <center>
-           <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btneraus">Ausente</a><br><br><br>
+           <a href="#pagaptm" class="proyecto" onClick="opapfc(this.id)" id="btneraus">Ausente</a><br><br><HR width=100% align="center"><br>
            
-           <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnerdeb">Débil, Irregular</a><br><br><br>
+           <a href="#pagaptm" class="proyecto" onClick="opapfc(this.id)" id="btnerdeb">Débil, Irregular</a><br><br><HR width=100% align="center"><br>
            
-           <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnerlla">Llanto vigoroso</a><br><br><br>
+           <a href="#pagaptm" class="proyecto" onClick="opapfc(this.id)" id="btnerlla">Llanto vigoroso</a><br><br><HR width=100% align="center"><br>
    		 </center>
         
         <br>
@@ -2322,20 +2329,117 @@ function limpiarsilverman()
         
   <!--------------------------TONO MUSCULAR DEL BEBE-------------------------------------------------------->
       
+        <div data-role="page" id="pagaptm" data-theme="a">
+			<div data-role="header" data-theme="a">
+    			<p align="center">TONO MUSCULAR DEL BEBÉ</p>       
+     		</div>
+    
+    <br>
+    
+    <div>
+    
+    <p align="center"><a href="#pagapesf" class="botonhoja" id="atras1">ATRAS</a><a href="javascript:confirmar()" class="botonhoja" id="atras1">REGRESAR</a><HR width=100% align="center"><br>
+    
+    <center>
+    	 <a href="#pagapir" class="proyecto" onClick="opapfc(this.id)" id="btntmft">Flacidez Total</a><br><br><HR width=100% align="center"><br>
+         
+          <a href="#pagapir" class="proyecto" onClick="opapfc(this.id)" id="btntmcf">Cierta Flexión de extremidades</a><br><br><HR width=100% align="center"><br>
+          
+           <a href="#pagapir" class="proyecto" onClick="opapfc(this.id)" id="btntmma">Movimientos Activos</a><br><br><HR width=100% align="center"><br>
+           </center>
+    
+    
+     <br>
+    		<div align="center">SELECCIONADO</div>
+    
+    		<div align="center" id="tmdb"> </div>
+    
+    </div>
+        
+        </div>
       
       
         
   <!---------------------------REFLEJO DE IRRITABILIDAD--------------------------------------------------------->
         
-       
+        <div data-role="page" id="pagapir" data-theme="a">
+			<div data-role="header" data-theme="a">
+    			<p align="center">IRRITABILIDAD REFLEJADA</p>       
+     		</div>
+        		<br>
+                
+                
+                <div>
+                
+                <p align="center"><a href="#pagaptm" class="botonhoja" id="atras1">ATRAS</a><a href="javascript:confirmar()" class="botonhoja" id="atras1">REGRESAR</a><HR width=100% align="center"><br>
+                
+                <center>
+                
+                 <a href="#pagapcolor" class="proyecto" onClick="opapfc(this.id)" id="btnirno">No hay Respuesta</a><br><br><HR width=100% align="center"><br>
+                 
+                  <a href="#pagapcolor" class="proyecto" onClick="opapfc(this.id)" id="btnirrd">Reacción discreta (muecas)</a><br><br><HR width=100% align="center"><br>
+                  
+                   <a href="#pagapcolor" class="proyecto" onClick="opapfc(this.id)" id="btnirll">Llanto</a><br><br><HR width=100% align="center"><br>
+                   
+               </center>
+               <br>
+    		<div align="center">SELECCIONADO</div>
+    
+    		<div align="center" id="ir"> </div>
+            
+                </div>    
+            
+         </div>
        
         
         
   <!------------------------------COLORACION DEL BEBE---------------------------------------------------------->
   
+ 		 <div data-role="page" id="pagapcolor" data-theme="a">
+			<div data-role="header" data-theme="a">
+    			<p align="center">COLOR</p>       
+     		</div>
+        		<br>
+            
+            <div>
+            
+            <p align="center"><a href="#pagapir" class="botonhoja" id="atras1">ATRAS</a><a href="javascript:confirmar()" class="botonhoja" id="atras1">REGRESAR</a><HR width=100% align="center"><br>
+            
+            <center>
+             <a href="#pagresapgar" class="proyecto" onClick="opapfc(this.id)" id="btncolcia">Cianosis Total</a><br><br><HR width=100% align="center"><br>
+             
+             <a href="#pagresapgar" class="proyecto" onClick="opapfc(this.id)" id="btncolcue">Cuerpo Rosado Cianosis distal</a><br><br><HR width=100% align="center"><br>
+             
+             <a href="#pagresapgar" class="proyecto" onClick="opapfc(this.id)" id="btncolros">Rosado</a><br><br><HR width=100% align="center"><br>
+             <center>
+            
+             
+              <br>
+    		<div align="center">SELECCIONADO</div>
+    
+    		<div align="center" id="colo"> </div>
+             
+            
+            </div>
+            </div>
        
-<!---------------------------------OPERACIONES APGAR-------------------------------------------------------->
+<!---------------------------------RESULTADO APGAR-------------------------------------------------------->
 	
+     <div data-role="page" id="pagresapgar" data-theme="a">
+			<div data-role="header" data-theme="a">
+    			<p align="center">RESULTADO</p>       
+     		</div>
+            
+            <h3><div align="center" style="background-color:#FF0" id="puntosapgar"></div></h3>
+            
+            <p align="center"><a href="#pagapcolor" class="botonhoja" id="atras1">ATRAS</a><a href="#page" class="botonhoja" id="atras1">REGRESAR</a><HR width=100% align="center"><br>
+            
+           <font color="#FFFFFF"> <div align="center" style="background-color:#F00" id="resapgar"></div></font>
+        
+            </div>
+	      
+<!-------------------------------------SCRIPT APGAR------------------------------------------------------------>    
+   
    <script type="text/livescript">
 function opapfc(clicked_id)
 	
@@ -2364,13 +2468,79 @@ function opapfc(clicked_id)
 			case "btnerlla":
 				document.getElementById("er").innerHTML=2;
 				break;
+				
+		<!----------------------------------------------------->
+		
+			case "btntmft":
+				document.getElementById("tmdb").innerHTML=0;
+				break;
+			case "btntmcf":
+				document.getElementById("tmdb").innerHTML=1;
+				break;
+			case "btntmma":
+				document.getElementById("tmdb").innerHTML=2;
+				break;
+				
+		<!----------------------------------------------------->
+		
+			case "btnirno":
+				document.getElementById("ir").innerHTML=0;
+				break;
+			case "btnirrd":
+				document.getElementById("ir").innerHTML=1;
+				break;
+			case "btnirll":
+				document.getElementById("ir").innerHTML=2;
+				break;
+				
+				
+		<!----------------------------------------------------->
+		
+			case "btncolcia":
+				document.getElementById("colo").innerHTML=0;
+				break;
+			case "btncolcue":
+				document.getElementById("colo").innerHTML=1;
+				break;
+			case "btncolros":
+				document.getElementById("colo").innerHTML=2;
+				break;
 		}
 		
-		//document.getElementById("fc").innerHTML=0;	
+		var a=document.getElementById("fc").innerHTML;
+		var b=document.getElementById("er").innerHTML;
+		var c=document.getElementById("tmdb").innerHTML;
+		var d=document.getElementById("ir").innerHTML;
+		var e=document.getElementById("colo").innerHTML;
 		
+		var s=parseInt(a)+parseInt(b)+parseInt(c)+parseInt(d)+parseInt(e);
+		
+		document.getElementById("puntosapgar").innerHTML=s;
+		
+		if (s<=4)
+		{
+			document.getElementById("resapgar").innerHTML="Asfixia Severa. Necesita maniobras de reanimación o resucitación";	
+		}else if(s<=7)
+		{
+			document.getElementById("resapgar").innerHTML="Pueden ser necesarias algunas maniobras para ayudarlo a respirar";	
+		}else{
+			document.getElementById("resapgar").innerHTML="Bebé en buenas condiciones";	
+		}	
 	}
 	</script>
-    
+  
+<!------------------------------------------------LIMPIAR DATOS APGAR---------------------------------------->
+
+		<script>
+		function limpiarapgar()
+		{
+			document.getElementById("fc").innerHTML="";
+			document.getElementById("er").innerHTML="";
+			document.getElementById("tmdb").innerHTML="";
+			document.getElementById("ir").innerHTML="";
+			document.getElementById("colo").innerHTML="";
+		}
+  		</script>
   
 </body>
 </html>
