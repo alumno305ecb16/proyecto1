@@ -2265,39 +2265,24 @@ function limpiarsilverman()
      	</div>
    
    	<br>
-    <br>  
+    
   
     <div id="opfc">
-    	<table border="2px"> 
-    		<tr>
-            <td>
-           Ausente
-            </td>
-            <td>
-      <a href="" onClick="opfcaus()"> <input type="radio" name="grupo1" id="rbfcaus" value="ausente"></a>
-       		</td>
-            </tr>
+   
+            <center>
+       <!-------------------------------FC---------------------------------------------->
+         <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnfcaus">Ausente</a><br><br><br>
+          
+          <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnfcmen">Menor a 100</a><br><br><br>
+           
+          <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnfcmay">Mayor a 100</a><br><br><br>
+          
+    
+         
+            </center>
             
-            <tr>
-            <td>
-            Menor a 100
-            </td>
-            <td>
-      <a href="" onClick="opfcmen()"> <input type="radio" id="rbfcmen" name="grupo1" value="menor100"></a>
-     		</td>
-            </tr>
             
-            <tr>
-            <td>
-            Mayor a 100
-            </td>
-            <td>
-     <a href="" onClick="opfcmay()"> <input type="radio" id="rbfcmay" name="grupo1" value="mayor100"></a>
-            </td>
-            </tr>
-            
-            </table>
-  	
+  	<br>
     <div align="center">SELECCIONADO</div>
     
     <div align="center" id="fc"> </div>
@@ -2307,7 +2292,33 @@ function limpiarsilverman()
     
   <!----------------------------ESFURZO RESPIRSTORIO----------------------------------------------------------> 
      	
+        <div data-role="page" id="pagapesf" data-theme="a">
+		<div data-role="header" data-theme="a">
+   	
+    		<p align="center">ESFUERZO RESPIRATORIO</p>       
+     	</div>
         
+        <br>
+        
+       
+        
+        <div>
+         
+          <center>
+           <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btneraus">Ausente</a><br><br><br>
+           
+           <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnerdeb">Débil, Irregular</a><br><br><br>
+           
+           <a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnerlla">Llanto vigoroso</a><br><br><br>
+   		 </center>
+        
+        <br>
+    		<div align="center">SELECCIONADO</div>
+    
+    		<div align="center" id="er"> </div>
+        
+        </div>
+        </div>
         
   <!--------------------------TONO MUSCULAR DEL BEBE-------------------------------------------------------->
       
@@ -2325,25 +2336,41 @@ function limpiarsilverman()
        
 <!---------------------------------OPERACIONES APGAR-------------------------------------------------------->
 	
-    <script>
-	function opfcaus()
+   <script type="text/livescript">
+function opapfc(clicked_id)
+	
 	{
-		document.getElementById("fc").innerHTML=0;	
+		var fc=(clicked_id);
+		//alert(fc)
+		switch (fc)
+		{
+			case "btnfcaus":
+				document.getElementById("fc").innerHTML=0;
+				break;
+			case "btnfcmen":
+				document.getElementById("fc").innerHTML=1;
+				break;
+			case "btnfcmay":
+				document.getElementById("fc").innerHTML=2;
+				break;
+			
+		<!---------------------------------------------------->	
+			case "btneraus":
+				document.getElementById("er").innerHTML=0;	
+				break;
+			case "btnerdeb":
+				document.getElementById("er").innerHTML=1;
+				break;
+			case "btnerlla":
+				document.getElementById("er").innerHTML=2;
+				break;
+		}
+		
+		//document.getElementById("fc").innerHTML=0;	
+		
 	}
 	</script>
     
-    <script>
-	function opfcmen()
-	{
-		document.getElementById("fc").innerHTML=1;
-	}
-	</script>
-    
-    <script>
-	function opfcmay()
-	{
-		document.getElementById("fc").innerHTML=2;
-	}
-	</script>
+  
 </body>
 </html>
