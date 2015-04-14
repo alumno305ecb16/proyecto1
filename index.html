@@ -1840,20 +1840,32 @@ function capdep(clicked_id)
 			if(r<32)
 			{
 				document.getElementById("capurroclasificacion").innerHTML="PREMATURO EXTREMO";
+				document.getElementById("capurroclasificacion").style.background='#FF0000';	
+				document.getElementById("capurroclasificacion").style.color="#FFFFFF";
 			}
 			else if (r<=34)
 			{
 				document.getElementById("capurroclasificacion").innerHTML="PREMATURO MODERADO";
+				document.getElementById("capurroclasificacion").style.background='#F3FF00';	
+				document.getElementById("capurroclasificacion").style.color="#000000";
+				
 			}
 			else if (r<=36)
 			{
 				document.getElementById("capurroclasificacion").innerHTML="PREMATURO LEVE";
+				document.getElementById("capurroclasificacion").style.background='#FFD100';	
+				document.getElementById("capurroclasificacion").style.color="#000000";
 			}else if (r<42)
 			{
 				document.getElementById("capurroclasificacion").innerHTML="TÉRMINO";
+				document.getElementById("capurroclasificacion").style.background='#10F70C';	
+				document.getElementById("capurroclasificacion").style.color="#FFFFFF";
+				
 			}else if(r>=42)
 			{
 				document.getElementById("capurroclasificacion").innerHTML="POSTMADURO";
+				document.getElementById("capurroclasificacion").style.background='#209A1D';	
+				document.getElementById("capurroclasificacion").style.color="#FFFFFF";
 			}		
 	}	
 }
@@ -2149,7 +2161,7 @@ function capdep(clicked_id)
         <a href="#page" class="botonhoja">REGRESAR</a>
         </center>
     
-    	<font color="#FFFFFF"><h3><div align="center" style="background-color:#F00" id="silrango"></div></h3></font>
+    	<h3><div align="center" id="silrango"></div></h3></font>
     </div>
                 
 <!-----------------------------------SUMA SILVERMAN JAVASCRIPT--------------------------------------------------------->
@@ -2227,15 +2239,24 @@ function sumapuntossilverman(clicked_id)
 		if (suma==0)
 		{
 			document.getElementById("silrango").innerHTML="Sin Asfixia ni Dificultad Respiratoria";	
+			document.getElementById("silrango").style.background='#18CE15';	
+			document.getElementById("silrango").style.color="#FFFFFF";
+			
 		}else if(suma<=3)
 		{
 			document.getElementById("silrango").innerHTML="Con Dificultad Respiratoria Leve";	
+			document.getElementById("silrango").style.background='#FCFF00';	
+			document.getElementById("silrango").style.color="#000000";
 		}else if(suma<=6)
 		{
 			document.getElementById("silrango").innerHTML="Con Difivultad Respiratoria Moderada";
+			document.getElementById("silrango").style.background='#DFEA0E';	
+			document.getElementById("silrango").style.color="#000000";
 		}else if(suma<=10)
 		{
 			document.getElementById("silrango").innerHTML="Con Dificultad Respiratoria Severa";		
+			document.getElementById("silrango").style.background='#FF0000';	
+			document.getElementById("silrango").style.color="#FFFFFF";
 		}
 }
 </script>
@@ -2434,7 +2455,7 @@ function limpiarsilverman()
             
             <p align="center"><a href="#pagapcolor" class="botonhoja" id="atras1">ATRAS</a><a href="#page" class="botonhoja" id="atras1">REGRESAR</a></p>
             
-           <font color="#FFFFFF"> <div align="center" style="background-color:#F00" id="resapgar"></div></font>
+           <font color="#FFFFFF"> <div align="center" id="resapgar"></div></font>
         
             </div>
 	      
@@ -2519,12 +2540,20 @@ function opapfc(clicked_id)
 		
 		if (s<=4)
 		{
-			document.getElementById("resapgar").innerHTML="Asfixia Severa. Necesita maniobras de reanimación o resucitación";	
+			document.getElementById("resapgar").innerHTML="Asfixia Severa. Necesita maniobras de reanimación o resucitación";
+			
+			document.getElementById("resapgar").style.background='#FF0000';	
+			document.getElementById("resapgar").style.color="#FFFFFF";
 		}else if(s<=7)
 		{
 			document.getElementById("resapgar").innerHTML="Pueden ser necesarias algunas maniobras para ayudarlo a respirar";	
+			document.getElementById("resapgar").style.background='#FCFF00';
+			document.getElementById("resapgar").style.color="#000000";
+				
 		}else{
 			document.getElementById("resapgar").innerHTML="Bebé en buenas condiciones";	
+			document.getElementById("resapgar").style.background='#2BD82B';
+			document.getElementById("resapgar").style.color="#FFFFFF";
 		}	
 	}
 	</script>
