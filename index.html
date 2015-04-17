@@ -1272,6 +1272,7 @@ function limpiarcapurro()
 <center>
       <div data-role="footer" data-theme="a">
    	<h4>AREA DE SALUD</h4>
+     <a href="javascript:confirmar()" id="atras1" data-icon="home">INICIO</a>
    </div>
      </div>
      
@@ -1336,7 +1337,7 @@ function limpiarcapurro()
            
 <center>
       <div data-role="footer" data-theme="a">
-      <a href="#page"  id="atras1" data-icon="home">INICIO</a>
+      <a href="javascript:confirmar()" id="atras1" data-icon="home">INICIO</a>
    	<h4>AREA DE SALUD</h4>
    </div>
      </div>
@@ -1839,26 +1840,21 @@ function capdep(clicked_id)
 <!---------------------------------------SILVERMAN--------------------------------------------------------------------->
 		  
 <!---------------------------------------DISOCIACIÓN TORACOABDOMINAL 1------------------------------------------------->                
-        <div data-role="page" id="pagsildis" data-theme="a">
+        <div data-role="page" id="pagsildis" data-theme="a" data-add-back-btn="true">
 	<div data-role="header" data-theme="a">
-        		<p align="center">DISOCIACIÓN TORACOABDOMINAL</p>
+        		<h4 align="center">DISOCIACIÓN TORACOABDOMINAL</h4>
      </div>
      
     <div>
     
-    <table border="2px"> 
-    		<tr>
-            <td>
-            	<div align="center">  <a href="#page" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a></div>
-             </td>          
-            </tr>
-            
+    <table border="2px" align="center"> 
+    		
            <tr>
            <td>
     		<a href="#pagsilret"><input type="image" id="dissin0" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/chest/chest0.jpg" align="left" width="140" height="80" value="0"></a>
     		</td>
             <td style="background-color:#0F0">
-            <p>Sincronizado</p>
+            <p><a href="#pagsilret" id="dissin0" onClick="sumapuntossilverman(this.id)"><font face="Arial Black, Gadget, sans-serif" size="5">Sincronizado</font></a></p>
             </td>
             </tr>
             
@@ -1867,7 +1863,7 @@ function capdep(clicked_id)
             <a href="#pagsilret"><input type="image" id="disins1" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/chest/lag1.jpg" align="left" width="140" height="80" value="0"></a>
             </td>
             <td style="background-color:#FF0">
-            <p>En Inspiración</p>
+            <p><a href="#pagsilret" id="disins1" onClick="sumapuntossilverman(this.id)"><font face="Arial Black, Gadget, sans-serif" size="5">En Inspiración</font></a></p>
             </td>
             </tr>
             
@@ -1876,7 +1872,7 @@ function capdep(clicked_id)
              <a href="#pagsilret"><input type="image" id="dissie" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/chest/seesaw2.jpg" align="left" width="140" height="80" value="0"></a>
             </td>
             <td style="background-color:#F00">
-            <font color="#FFFFFF"><p>Siempre visible</p></font>
+           <p><a href="#pagsilret" id="dissie" onClick="sumapuntossilverman(this.id)"> <font color="#FFFFFF" face="Arial Black, Gadget, sans-serif" size="5">Siempre visible</font></a></p>
             </td>
             </tr>
     </table>
@@ -1886,33 +1882,26 @@ function capdep(clicked_id)
         <h4><div id="dtora" align="center">0</div></h4>
     
     <div data-role="footer" data-theme="a">
+    	
    			<h4 align="center">AREA DE SALUD</h4>
 	   </div>
      </div>
 		
 <!-------------------------------------------RETRACCIONES INTERCOSTALES 2---------------------------------------------->
         
-        <div data-role="page" id="pagsilret" data-theme="a">
+        <div data-role="page" id="pagsilret" data-theme="a" data-add-back-btn="true">
 	<div data-role="header" data-theme="a">
-        		<p align="center">RETRACCIONES INTERCOSTALES</p>
+        		<h4 align="center">RETRACCIONES INTERCOSTALES</h4>
      </div>
      <div>
-     <table border="2px"> 
-           <tr>
-           <td>
-      		     <div align="center">  <a href="#pagsildis" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a></div>
-           </td>
-           <td>
-            <div align="right"><a href="javascript:confirmar()" class="botonhoja">REGRESAR</a></div>
-           </td>
-           </tr>
-           
+     <table border="2px" align="center"> 
+          
            <tr>
            <td>
            		 <a href="#pagsilretrea"><input type="image" id="retsin" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/retracciones/sin0.jpg" align="left" width="140" height="80" value="0"></a>
            </td>
            <td style="background-color:#0F0">
-           <p>Sin Retracción</p>
+           <p><a href="#pagsilretrea" id="retsin" onClick="sumapuntossilverman(this.id)"><font face="Arial Black, Gadget, sans-serif" size="5">Sin Retracción</font></a></p>
            </td>
            </tr>
            
@@ -1921,7 +1910,7 @@ function capdep(clicked_id)
            		<a href="#pagsilretrea"><input type="image" id="retsolo" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/retracciones/solo1.jpg" align="left" width="140" height="80" value="0"></a>
            </td>
            <td style="background-color:#FF0">
-           <p>Solo Visible</p>
+           <p><a href="#pagsilretrea" id="retsolo" onClick="sumapuntossilverman(this.id)"><font face="Arial Black, Gadget, sans-serif" size="5">Solo Visible</font></a></p>
            </td>
            </tr>
      		
@@ -1930,7 +1919,7 @@ function capdep(clicked_id)
             	<a href="#pagsilretrea"><input type="image" id="retmar" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/retracciones/mar2.jpg" align="left" width="140" height="80" value="0"></a>
             </td>
             <td style="background-color:#F00">
-           <font color="#FFFFFF"> <p>Marcado</p></font>
+           <p><a href="#pagsilretrea" id="retmar" onClick="sumapuntossilverman(this.id)"> <font color="#FFFFFF" face="Arial Black, Gadget, sans-serif" size="5">Marcado</font></a></p>
             </td>
             </tr>   
         </table>
@@ -1940,32 +1929,30 @@ function capdep(clicked_id)
            <h4><div align="center">SELECCIONADO</div></h4>
         <h4><div id="rint" align="center">0</div></h4>
         
+        <center>
             <div data-role="footer" data-theme="a">
-   			<h4 align="center">AREA DE SALUD</h4>
+   			 <a href="javascript:confirmar()" id="atras1" data-icon="home">INICIO</a>
+        	<h4 align="center">AREA DE SALUD</h4>
+        </div>
+        </center>
+        
 	   </div>
        </div>
 <!---------------------------------------------RETRACCION SUBXIFOLDES 3----------------------------------------------->        
-							<div data-role="page" id="pagsilretrea" data-theme="a">
+							<div data-role="page" id="pagsilretrea" data-theme="a" data-add-back-btn="true">
 							<div data-role="header" data-theme="a">
         					<p align="center">RETRACCIÓN SUBXIFOLDES</p>
      </div>
      	<div>
-     	<table border="2px"> 
-  			<tr>
-            <td>
-            <div align="center">  <a href="#pagsilret" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a></div>
-            </td>
-            <td>
-				 <div align="right"><a href="javascript:confirmar()" class="botonhoja">REGRESAR</a></div>            
-            </td>
-            </tr>
+     	<table border="2px" align="center"> 
+  			
             
            <tr>
            <td>
            		 <a href="#pagsilale"><input type="image" id="retnin" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/RETRACCION/ninguno0.jpg" align="left" width="140" height="80" value="0"></a>
             </td>
             <td style="background-color:#0F0">
-            <p>Ninguno</p>
+            <p><a href="#pagsilale" id="retnin" onClick="sumapuntossilverman(this.id)"><font face="Arial Black, Gadget, sans-serif" size="5">Ninguno</font></a></p>
             </td>
             </tr>
             
@@ -1974,7 +1961,7 @@ function capdep(clicked_id)
             	<a href="#pagsilale"><input type="image" id="retrsolo" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/RETRACCION/solo1.jpg" align="left" width="140" height="80" value="0"></a>
             </td>
             <td style="background-color:#FF0">
-            <p>Solo Visible</p>
+            <p><a href="#pagsilale" id="retrsolo" onClick="sumapuntossilverman(this.id)"><font face="Arial Black, Gadget, sans-serif" size="5">Solo Visible</font></a></p>
             </td>
             </tr>
             
@@ -1983,7 +1970,7 @@ function capdep(clicked_id)
             <a href="#pagsilale"><input type="image" id="retrmar" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/RETRACCION/marcado2.jpg" align="left" width="140" height="80" value="0"></a>
             </td>
             <td style="background-color:#F00">
-            <font color="#FFFFFF"><p>Marcado</p></font>
+            <a href="#pagsilale" id="retrmar" onClick="sumapuntossilverman(this.id)"><font color="#FFFFFF" face="Arial Black, Gadget, sans-serif" size="5">Marcado</font></a>
             </td>
             </tr>
             </table>
@@ -1992,35 +1979,31 @@ function capdep(clicked_id)
            <h4><div align="center">SELECCIONADO</div></h4>
         <h4><div id="rsub" align="center">0</div></h4>
         
+         <center>
             <div data-role="footer" data-theme="a">
-   			<h4 align="center">AREA DE SALUD</h4>
-	   </div>
-     </div>	
+   			   <a href="javascript:confirmar()" id="atras1" data-icon="home">INICIO</a>
+            <h4 align="center">AREA DE SALUD</h4>
+        </div>
+        </center>
+        </div>
+  
 <!---------------------------------------------ALETEO NASAL 4--------------------------------------------------------->
 
-		<div data-role="page" id="pagsilale" data-theme="a">
+		<div data-role="page" id="pagsilale" data-theme="a" data-add-back-btn="true">
 							<div data-role="header" data-theme="a">
         			<p align="center">ALETEO NASAL</p>
  
      			</div>
                 <div>
                 
-                <table border="2px"> 
-                <tr>
-                <td>
-                 	<div align="center">  <a href="#pagsilretrea" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a></div>
-                </td>
-                <td>
-                	 <div align="right"><a href="javascript:confirmar()" class="botonhoja">REGRESAR</a></div>  
-                </td>
-                </tr>
-                
+                <table border="2px" align="center"> 
+                                
            <tr>
            <td>
            		 <a href="#pagsilquejido"><input type="image" id="alenin" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/aleteo/ninguno0.jpg" align="left" width="140" height="80" value="0"></a>
             </td>
             <td style="background-color:#0F0">
-            <p>Ninguno</p>
+            <p><a href="#pagsilquejido" id="alenin" onClick="sumapuntossilverman(this.id)"><font face="Arial Black, Gadget, sans-serif" size="5">Ninguno</font></a></p>
             </td>
             </tr>
             
@@ -2029,7 +2012,7 @@ function capdep(clicked_id)
             	<a href="#pagsilquejido"><input type="image" id="alemin" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/aleteo/minimo1.jpg" align="left" width="140" height="80" value="0"></a>
             </td>
             <td bgcolor="#FFFF00">
-            <p>Minimo</p>
+            <p><a href="#pagsilquejido" id="alemin" onClick="sumapuntossilverman(this.id)"><font face="Arial Black, Gadget, sans-serif" size="5">Minimo</font></a></p>
             </td>
             </tr>
             
@@ -2038,7 +2021,7 @@ function capdep(clicked_id)
             	<a href="#pagsilquejido"><input type="image" id="alemar" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/aleteo/marcado2.jpg" align="left" width="140" height="80" value="0"></a>
             </td>
             <td bgcolor="#FF0000">
-            <font color="#FFFFFF"><p>Marcado</p></font>
+            <a href="#pagsilquejido" id="alemar" onClick="sumapuntossilverman(this.id)"><font color="#FFFFFF" face="Arial Black, Gadget, sans-serif" size="5">Marcado</font></a>
             </td>
             </tr>
             
@@ -2048,36 +2031,31 @@ function capdep(clicked_id)
                  <h4><div align="center">SELECCIONADO</div></h4>
         <h4><div id="anas" align="center">0</div></h4>
         
+           <center>
             <div data-role="footer" data-theme="a">
-   			<h4 align="center">AREA DE SALUD</h4>
-     </div>
-     </div>
+   			   <a href="javascript:confirmar()" id="atras1" data-icon="home">INICIO</a>
+            <h4 align="center">AREA DE SALUD</h4>
+        </div>
+        </center>
+        </div>
 
 <!------------------------------------------QUEJIDO NASAL 5------------------------------------------------------->
 
 
-	<div data-role="page" id="pagsilquejido" data-theme="a">
+	<div data-role="page" id="pagsilquejido" data-theme="a" data-add-back-btn="true">
 							<div data-role="header" data-theme="a">
         			<p align="center">QUEJIDO NASAL</p>
  
      			</div>
                 <div>
-                <table border="2px"> 
-                <tr>
-                <td>
-                	<div align="center">  <a href="#pagsilale" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a></div>
-                </td>
-                <td>
-                <div align="right"><a href="javascript:confirmar()" class="botonhoja">REGRESAR</a></div>  
-                </td>
-                </tr>
-                
+          <table border="2px" align="center"> 
+                        
            <tr>
            <td>
           		<a href="#pagsilres"><input type="image" id="quenin" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/quejido/ninguno0.jpg" align="left" width="140" height="80" value="0"></a>
            </td>
            <td bgcolor="#00FF00">
-           <p>Ninguno</p>
+           <p><a href="#pagsilres" id="quenin" onClick="sumapuntossilverman(this.id)"><font face="Arial Black, Gadget, sans-serif" size="5">Ninguno</font></a></p>
            </td>
          	</tr>
             
@@ -2086,7 +2064,7 @@ function capdep(clicked_id)
             	 <a href="#pagsilres"><input type="image" id="quesolo" onClick="sumapuntossilverman(this.id)" src="jquery-mobile/images/quejido/solo1.jpg" align="left" width="140" height="80" value="0"></a>
             </td>
             <td bgcolor="#FFFF00">
-            <p>Solo por esteloscop</p>
+            <p><a href="#pagsilres" id="quesolo" onClick="sumapuntossilverman(this.id)"><font face="Arial Black, Gadget, sans-serif">Solo por esteloscop</font></a></p>
             </td>
             </tr>
             
@@ -2096,7 +2074,7 @@ function capdep(clicked_id)
                  
             </td>
             <td bgcolor="#FF0000">
-            <font color="#FFFFFF"><p>Audible al oido</p></font>
+            <a href="#pagsilres" id="queaudi" onClick="sumapuntossilverman(this.id)"><font color="#FFFFFF" face="Arial Black, Gadget, sans-serif" size="5">Audible al oido</font></a>
             </td>
             </tr>
             </table>              
@@ -2105,11 +2083,13 @@ function capdep(clicked_id)
                  <h4><div align="center">SELECCIONADO</div></h4>
         <h4><div id="qnas" align="center">0</div></h4>
         
+           <center>
             <div data-role="footer" data-theme="a">
-   			<h4 align="center">AREA DE SALUD</h4>
-        
-         </div>       
-         </div>
+   			   <a href="javascript:confirmar()" id="atras1" data-icon="home">INICIO</a>
+            <h4 align="center">AREA DE SALUD</h4>
+        </div>
+        </center>
+        </div>
                 
 <!-----------------------------------RESULTADO----------------------------------------------------------->
 
@@ -2123,7 +2103,7 @@ function capdep(clicked_id)
         <center>
         <a href="#pagsilquejido" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a>
         
-        <a href="#page" class="botonhoja">REGRESAR</a>
+        <a href="#page" class="botonhoja">INICIO</a>
         </center>
     
     	<h3><div align="center" id="silrango"></div></h3></font>
@@ -2315,17 +2295,8 @@ function limpiarsilverman()
      	</div>
         
         <br>
-        
-        
-       
-        
-        <div>
-          
-          
-         <!-- <a href="#pagapgar" class="botonhoja" id="atras1">ATRAS</a>-->
-          
-          
-          
+    
+        <div>          
          
           <center>
           
@@ -2390,9 +2361,6 @@ function limpiarsilverman()
     <div>
 
  
-   <!-- <p align="center"><a href="#pagapesf" class="botonhoja" id="atras1">ATRAS</a>-->
-   
-    
     <center>
     <TABLE border="2" align="center">
          <tr>
@@ -2575,20 +2543,24 @@ function limpiarsilverman()
        
 <!---------------------------------RESULTADO APGAR-------------------------------------------------------->
 	
-     <div data-role="page" id="pagresapgar" data-theme="a" data-add-back-btn="true">
+     <div data-role="page" id="pagresapgar" data-theme="a">
 			<div data-role="header" data-theme="a">
     			<p align="center">RESULTADO</p>       
      		</div>
             
             <h3><div align="center" style="background-color:#FF0" id="puntosapgar"></div></h3>
             
-          
+          <center>
+        <a href="#pagapcolor" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a>
+        
+        <a href="#page" class="botonhoja">INICIO</a>
+        </center><br>
             
-           <font color="#FFFFFF" size="5" face="Arial Black, Gadget, sans-serif"> <div align="center" id="resapgar"></div></font>
+           <font color="#FFFFFF" size="4" face="Arial Black, Gadget, sans-serif"> <div align="center" id="resapgar"></div></font>
         
          <center>
            <div data-role="footer" data-theme="a">
-         <a href="#page"  id="atras1" data-icon="home">INICIO</a>    	
+           	
     		<h4>AREA DE SALUD</h4>
    </div>
    </center>
