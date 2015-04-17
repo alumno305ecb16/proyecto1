@@ -21,7 +21,7 @@
 
 <div data-role="page" id="page" data-theme="a">
 	<div data-role="header" data-theme="a">
-    		<p align="center">EDAD GESTACIONAL</p>
+    		<p align="center">SELECCIONE UNA OPCIÓN</p>
      </div>
       <div data-role="content" data-theme="a">
      	<ul data-role="listview">
@@ -2278,7 +2278,7 @@ function limpiarsilverman()
 <!-------------------------------------------APGAR----------------------------------------------------------------->
  <!------------------------------FRECUENCIA CARDIACA--------------------------------------------------------->  
 
-	<div data-role="page" id="pagapgar" data-theme="a">
+	<div data-role="page" id="pagapgar" data-theme="a" data-add-back-btn="true">
 		<div data-role="header" data-theme="a">
    
     		
@@ -2293,23 +2293,34 @@ function limpiarsilverman()
            
        <!-------------------------------FC---------------------------------------------->
          
-          <p align="center"><a href="#page" class="botonhoja" id="atras1">ATRAS</a><br>
+        <!--  <p align="left"><a href="#page" class="botonhoja" id="atras1">ATRAS</a><br>-->
          
        
-         <TABLE WIDTH=100% HEIGHT=10px border="2" align="center">
+         <TABLE border="2" align="center">
          <tr>
+         
+         <td>
+         		<a href="#pagapesf"><input type="image" id="btnfcaus" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/frecuenciacardiaca/sinlatido0.jpg" align="left" width="140" height="80" value="0"></a>
+         </td>
+         
          <td bgcolor="#FF0000">
-         	<br><p align="center"><a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnfcaus">Ausente</a></p><br><br>
+         <p align="left"><a href="#pagapesf" onClick="opapfc(this.id)" id="btnfcaus"><font color="#FFFFFF" size="5" face="Arial Black, Gadget, sans-serif">Ausente</font></a></p>
          </td>
          </tr>
          <tr>
+         <td>
+         		<a href="#pagapesf"><input type="image" id="btnfcmen" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/frecuenciacardiaca/menor1.jpg" align="left" width="140" height="80" value="0"></a>
+         </td>
          <td bgcolor="#FFFF00">
-         	<br><p align="center"><a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnfcmen">Menor a 100</a></p><br><br>
+         <p align="left"><a href="#pagapesf" onClick="opapfc(this.id)" id="btnfcmen"><font size="5" face="Arial Black, Gadget, sans-serif">Menor a 100</a></p>
          </td>
          </tr>
          <tr>
+         <td>
+         		<a href="#pagapesf"><input type="image" id="btnfcmay" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/frecuenciacardiaca/mayor.jpg" align="left" width="140" height="80" value="0"></a>
+         </td>
          <td bgcolor="#00FF00">
-         	<br><p align="center"><a href="#pagapesf" class="proyecto" onClick="opapfc(this.id)" id="btnfcmay">Mayor a 100</a></p><br><br>
+         <p align="left"><a href="#pagapesf" onClick="opapfc(this.id)" id="btnfcmay"><font size="5" face="Arial Black, Gadget, sans-serif">Mayor a 100</a></p>
          </td>
          </tr>
          </TABLE>
@@ -2320,11 +2331,19 @@ function limpiarsilverman()
    <h4> <div align="center" id="fc"> </div></h4>
   	
     </div>
+    
+     <center>
+           <div data-role="footer" data-theme="a">
+         	
+    		<h4>AREA DE SALUD</h4>
+   </div>
+   </center>
+    
     </div>
     
   <!----------------------------ESFURZO RESPIRSTORIO----------------------------------------------------------> 
      	
-        <div data-role="page" id="pagapesf" data-theme="a">
+        <div data-role="page" id="pagapesf" data-theme="a" data-add-back-btn="true">
 		<div data-role="header" data-theme="a">
    	
     		<p align="center">ESFUERZO RESPIRATORIO</p>       
@@ -2332,31 +2351,45 @@ function limpiarsilverman()
         
         <br>
         
+        
        
         
         <div>
-          <p align="center"><a href="#pagapgar" class="botonhoja" id="atras1">ATRAS</a><a href="javascript:confirmar()" class="botonhoja" id="atras1">REGRESAR</a><br>
+          
+          
+         <!-- <a href="#pagapgar" class="botonhoja" id="atras1">ATRAS</a>-->
+          
+          
           
          
           <center>
           
-           <TABLE WIDTH=100% HEIGHT=10px border="2" align="center">
+           <TABLE border="2" align="center">
          <tr>
+         <td>
+         		<a href="#pagaptm"><input type="image" id="btneraus" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/esfuerzoresp/ausente0.jpg" align="left" width="140" height="80" value="0"></a>
+         </td>
          <td bgcolor="#FF0000">
           
-          <br> <p align="center"><a href="#pagaptm" class="proyecto" onClick="opapfc(this.id)" id="btneraus">Ausente</a></p><br><br>
+         <p align="left"><a href="#pagaptm" onClick="opapfc(this.id)" id="btneraus"><font face="Arial Black, Gadget, sans-serif" color="#FFFFFF" size="5">Ausente</font></a></p>
           </td>
           </tr>
           
            <tr>
+           <td>
+           		<a href="#pagaptm"><input type="image" id="btnerdeb" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/esfuerzoresp/debil.jpg" align="left" width="140" height="80" value="0"></a>
+           </td>
            <td bgcolor="#FFFF00">
-          <p align="center"> <br><a href="#pagaptm" class="proyecto" onClick="opapfc(this.id)" id="btnerdeb">Débil, Irregular</a></p><br><br>
+          <p align="left"> <a href="#pagaptm" onClick="opapfc(this.id)" id="btnerdeb"><font face="Arial Black, Gadget, sans-serif" size="5">Débil, Irregular</font></a></p>
            </td>
            </tr>
            
            <tr>
+           <td>
+           		<a href="#pagaptm"><input type="image" id="btnerlla" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/esfuerzoresp/llanto.jpg" align="left" width="140" height="80" value="0"></a>
+           </td>
            <td bgcolor="#00FF00">
-        <p align="center"><br><a href="#pagaptm" class="proyecto" onClick="opapfc(this.id)" id="btnerlla">Llanto vigoroso</a></p><br><br>  
+        <p align="left"><a href="#pagaptm" onClick="opapfc(this.id)" id="btnerlla"><font size="5" face="Arial Black, Gadget, sans-serif">Llanto vigoroso</font></a></p>
            </td>
            </tr>
            </TABLE>
@@ -2368,11 +2401,21 @@ function limpiarsilverman()
     		<h4><div align="center" id="er"> </div></h4>
         
         </div>
+        
+         <center>
+           <div data-role="footer" data-theme="a">
+         
+         <a href="javascript:confirmar()"  id="atras1" data-icon="home">INICIO</a>    	
+    		<h4>AREA DE SALUD</h4>
+   			</div>
+   			</center>
+   
         </div>
         
   <!--------------------------TONO MUSCULAR DEL BEBE-------------------------------------------------------->
       
-        <div data-role="page" id="pagaptm" data-theme="a">
+        <div data-role="page" id="pagaptm" data-theme="a" data-add-back-btn="true">
+        
 			<div data-role="header" data-theme="a">
     			<p align="center">TONO MUSCULAR DEL BEBÉ</p>       
      		</div>
@@ -2380,26 +2423,37 @@ function limpiarsilverman()
     <br>
     
     <div>
-    
-    <p align="center"><a href="#pagapesf" class="botonhoja" id="atras1">ATRAS</a><a href="javascript:confirmar()" class="botonhoja" id="atras1">REGRESAR</a><br>
+
+ 
+   <!-- <p align="center"><a href="#pagapesf" class="botonhoja" id="atras1">ATRAS</a>-->
+   
     
     <center>
-    <TABLE WIDTH=100% HEIGHT=10px border="2" align="center">
+    <TABLE border="2" align="center">
          <tr>
+         <td>
+         		<a href="#pagapir"><input type="image" id="btntmft" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/tono/flazides0.jpg" align="left" width="140" height="80" value="0"></a>
+         </td>
          <td bgcolor="#FF0000">
-    	<br> <p align="center"><a href="#pagapir" class="proyecto" onClick="opapfc(this.id)" id="btntmft">Flacidez Total</a></p><br><br>
+    	<p align="left"><a href="#pagapir" onClick="opapfc(this.id)" id="btntmft"><font face="Arial Black, Gadget, sans-serif" size="5" color="#FFFFFF">Flacidez Total</font></a></p>
          </td>
          </tr>
          
          <tr>
+         <td>
+         		<a href="#pagapir"><input type="image" id="btntmcf" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/tono/ciertaflexion1.jpg" align="left" width="140" height="80" value="0"></a>
+         </td>
          <td bgcolor="#FFFF00">
-         <br> <p align="center"><a href="#pagapir" class="proyecto" onClick="opapfc(this.id)" id="btntmcf">Cierta Flexión de extremidades</a></p><br><br>
+         <p align="left"><a href="#pagapir" onClick="opapfc(this.id)" id="btntmcf"><font face="Arial Black, Gadget, sans-serif" size="5">Cierta Flexión de extremidades</font></a></p>
           </td>
           </tr>
           
           <tr>
+          <td>
+          		<a href="#pagapir"><input type="image" id="btntmma" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/tono/activos2.jpg" align="left" width="140" height="80" value="0"></a>
+          </td>
           <td bgcolor="#00FF00">
-          <br> <p align="center"> <a href="#pagapir" class="proyecto" onClick="opapfc(this.id)" id="btntmma">Movimientos Activos</a></p><br><br>			
+         <p align="left"> <a href="#pagapir" onClick="opapfc(this.id)" id="btntmma"><font face="Arial Black, Gadget, sans-serif" size="5">Movimientos Activos</font></a></p>	
           </td>
           </tr>
           </TABLE>
@@ -2412,6 +2466,14 @@ function limpiarsilverman()
     		<h4><div align="center" id="tmdb"> </div></h4>
     
     </div>
+        <center>
+           <div data-role="footer" data-theme="a">
+         <a href="javascript:confirmar()"  id="atras1" data-icon="home">INICIO</a>    	
+    		<h4>AREA DE SALUD</h4>
+   </div>
+   </center>
+     </div>
+   			
         
         </div>
       
@@ -2419,7 +2481,7 @@ function limpiarsilverman()
         
   <!---------------------------REFLEJO DE IRRITABILIDAD--------------------------------------------------------->
         
-        <div data-role="page" id="pagapir" data-theme="a">
+        <div data-role="page" id="pagapir" data-theme="a" data-add-back-btn="true">
 			<div data-role="header" data-theme="a">
     			<p align="center">IRRITABILIDAD REFLEJADA</p>       
      		</div>
@@ -2428,28 +2490,38 @@ function limpiarsilverman()
                 
                 <div>
                 
-                <p align="center"><a href="#pagaptm" class="botonhoja" id="atras1">ATRAS</a><a href="javascript:confirmar()" class="botonhoja" id="atras1">REGRESAR</a><HR width=100% align="center"><br>
+                <!--<p align="center"><a href="#pagaptm" class="botonhoja" id="atras1">ATRAS</a><a href="javascript:confirmar()" class="botonhoja" id="atras1">REGRESAR</a><HR width=100% align="center"><br>-->
                 
                 <center>
                 
-        <TABLE WIDTH=100% HEIGHT=10px border="2" align="center">
+        <TABLE border="2" align="center">
     			<tr>
+                <td>
+                		<a href="#pagapcolor"><input type="image" id="btnirno" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/irritavilidad/sinrespuesta0.jpg" align="left" width="140" height="80" value="0"></a>
+                </td>
          		<td bgcolor="#FF0000">
                 
-                <br><p align="center"> <a href="#pagapcolor" class="proyecto" onClick="opapfc(this.id)" id="btnirno">No hay Respuesta</a></p><br><br>
+                <font face="Arial Black, Gadget, sans-serif" color="#FFFFFF" size="5"><p align="left"> <a href="#pagapcolor" onClick="opapfc(this.id)" id="btnirno">No hay Respuesta</a></a></p>
                 </td>
                 </tr>
                 
                 <tr>
+                <td>
+                		<a href="#pagapcolor"><input type="image" id="btnirrd" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/irritavilidad/discreta1.jpg" align="left" width="140" height="80" value="0"></a>
+                </td>
+                
                 <td bgcolor="#FFFF00">
                  
-                 <br> <p align="center"><a href="#pagapcolor" class="proyecto" onClick="opapfc(this.id)" id="btnirrd">Reacción discreta (muecas)</a></p><br><br>
+                 <font size="5" face="Arial Black, Gadget, sans-serif"><p align="left"><a href="#pagapcolor" onClick="opapfc(this.id)" id="btnirrd">Reacción discreta (muecas)</a></a></p>
                 </td>
                 </tr>  
                   
                 <tr>
+                <td>
+                		<a href="#pagapcolor"><input type="image" id="btnirll" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/irritavilidad/llanto2.jpg" align="left" width="140" height="80" value="0"></a>
+                </td>
                 <td bgcolor="#00FF00">
-                  <p align="center"><br> <a href="#pagapcolor" class="proyecto" onClick="opapfc(this.id)" id="btnirll">Llanto</a></p><br><br>
+                  <font size="5" face="Arial Black, Gadget, sans-serif"><p align="left"><a href="#pagapcolor" onClick="opapfc(this.id)" id="btnirll">Llanto</a></a></p>
                 </td>
                 </tr>
                 </TABLE>
@@ -2461,13 +2533,20 @@ function limpiarsilverman()
             
                 </div>    
             
+            <center>
+           <div data-role="footer" data-theme="a">
+         <a href="javascript:confirmar()"  id="atras1" data-icon="home">INICIO</a>    	
+    		<h4>AREA DE SALUD</h4>
+   </div>
+   </center>
+            
          </div>
        
         
         
   <!------------------------------COLORACION DEL BEBE---------------------------------------------------------->
   
- 		 <div data-role="page" id="pagapcolor" data-theme="a">
+ 		 <div data-role="page" id="pagapcolor" data-theme="a" data-add-back-btn="true">
 			<div data-role="header" data-theme="a">
     			<p align="center">COLOR</p>       
      		</div>
@@ -2475,26 +2554,36 @@ function limpiarsilverman()
             
             <div>
             
-            <p align="center"><a href="#pagapir" class="botonhoja" id="atras1">ATRAS</a><a href="javascript:confirmar()" class="botonhoja" id="atras1">REGRESAR</a><br>
+           <!-- <p align="center"><a href="#pagapir" class="botonhoja" id="atras1">ATRAS</a><a href="javascript:confirmar()" class="botonhoja" id="atras1">REGRESAR</a><br>-->
             
             <center>
-             <TABLE WIDTH=100% HEIGHT=10px border="2" align="center">
+             <TABLE border="2" align="center">
     			<tr>
+                <td>
+                		<a href="#pagresapgar"><input type="image" id="btncolcia" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/color/cianosis total0.jpg" align="left" width="140" height="80" value="0"></a>
+                </td>
          		<td bgcolor="#FF0000">
-            <p align="center"><br> <a href="#pagresapgar" class="proyecto" onClick="opapfc(this.id)" id="btncolcia">Cianosis Total</a></p><br><br>
+            <p align="left"><a href="#pagresapgar" onClick="opapfc(this.id)" id="btncolcia"><font face="Arial Black, Gadget, sans-serif" size="5" color="#FFFFFF">Cianosis Total</font></a></p>
              </td>
              </tr>
              
              <tr>
+             <td>
+             		<a href="#pagresapgar"><input type="image" id="btncolcue" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/color/cuerporosado1.jpg" align="left" width="140" height="80" value="0"></a>
+             </td>
+             
              <td bgcolor="#FFFF00">
              
-            <p align="center"><br><a href="#pagresapgar" class="proyecto" onClick="opapfc(this.id)" id="btncolcue">Cuerpo Rosado Cianosis distal</a></p><br><br>
+            <p align="left"><a href="#pagresapgar" onClick="opapfc(this.id)" id="btncolcue"><font size="5" face="Arial Black, Gadget, sans-serif">Cuerpo Rosado Cianosis distal</font></a></p>
              </td>
              </tr>
              
              <tr>
+             <td>
+             		<a href="#pagresapgar"><input type="image" id="btncolros" onClick="opapfc(this.id)" src="jquery-mobile/images/apgar/color/rosado.jpg" align="left" width="140" height="80" value="0"></a>
+             </td>
              <td bgcolor="#00FF00">
-            <br><p align="center"> <a href="#pagresapgar" class="proyecto" onClick="opapfc(this.id)" id="btncolros">Rosado</a></p><br><br>
+            <p align="left"> <a href="#pagresapgar" onClick="opapfc(this.id)" id="btncolros"><font face="Arial Black, Gadget, sans-serif" size="5">Rosado</font></a></p>
              </td>
              </tr>
              </TABLE>
@@ -2508,23 +2597,40 @@ function limpiarsilverman()
              
             
             </div>
+            <div>
+             <center>
+           <div data-role="footer" data-theme="a">
+         <a href="javascript:confirmar()"  id="atras1" data-icon="home">INICIO</a>    	
+    		<h4>AREA DE SALUD</h4>
+   		</div>
+   		</center>
+            </div>
+            
             </div>
        
 <!---------------------------------RESULTADO APGAR-------------------------------------------------------->
 	
-     <div data-role="page" id="pagresapgar" data-theme="a">
+     <div data-role="page" id="pagresapgar" data-theme="a" data-add-back-btn="true">
 			<div data-role="header" data-theme="a">
     			<p align="center">RESULTADO</p>       
      		</div>
             
             <h3><div align="center" style="background-color:#FF0" id="puntosapgar"></div></h3>
             
-            <p align="center"><a href="#pagapcolor" class="botonhoja" id="atras1">ATRAS</a><a href="#page" class="botonhoja" id="atras1">REGRESAR</a></p>
+          
             
-           <h4><font color="#FFFFFF"> <div align="center" id="resapgar"></div></font></h4>
+           <font color="#FFFFFF" size="5" face="Arial Black, Gadget, sans-serif"> <div align="center" id="resapgar"></div></font>
+        
+         <center>
+           <div data-role="footer" data-theme="a">
+         <a href="#page"  id="atras1" data-icon="home">INICIO</a>    	
+    		<h4>AREA DE SALUD</h4>
+   </div>
+   </center>
         
             </div>
 	      
+          
 <!-------------------------------------SCRIPT APGAR------------------------------------------------------------>    
    
    <script type="text/livescript">
