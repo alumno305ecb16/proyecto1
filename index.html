@@ -299,12 +299,11 @@
 		
 		if(d>m)
 		{
-		alert("FECHA INVALIDA") 
-	
 			document.getElementById("res").innerHTML ="";
 			document.getElementById("pro").innerHTML="";
 			document.getElementById("opc").innerHTML="";
 			document.getElementById("res1").innerHTML="";
+			alert("FECHA INVALIDA") 
 		}else{
 			document.getElementById("res").innerHTML =fecha1+"  -  "+fecha2;
 			document.getElementById("res1").innerHTML=fecha;
@@ -344,10 +343,10 @@
 
 <h><label id="pro"></label></h5>
 
-<h4 style="background-color:#FF0"><div id="res1"></div></h4>
+<h4 style="background-color:#0CF"><div id="res1"></div></h4>
 
-<h><label id="opc"></label></h5>
-<font color="#FFFFFF"><h4 style="background-color:#F00"><div id="res"></div></h4></font>
+<h5><label id="opc"></label></h5>
+<h4 style="background-color:#0CF"><div id="res"></div></h4>
 
 </center>
 
@@ -809,8 +808,9 @@ function limpiarcap()
            
 <center>
       <div data-role="footer" data-theme="a">
+      <a href="javascript:confirmar()" id="atras1" data-icon="home">INICIO</a>
    	<h4>AREA DE SALUD</h4>
-     <a href="javascript:confirmar()" id="atras1" data-icon="home">INICIO</a>
+     
    </div>
      </div>
      
@@ -890,9 +890,9 @@ function limpiarcap()
     <div>
     <center>
     <br>
-      <h2><div align="center" id="parte" style="background-color:#999"></div></h2>
+      <h2><div align="center" id="parte" style="background-color:#09F"></div></h2>
       
-   	<font color="#000000"><h3 style="background-color:#FF0"> <div id="valortot">0</div></h3></font>
+   	<font color="#000000"><h3 style="background-color:#09F"> <div id="valortot">0</div></h3></font>
     
      <!--<a href="#paguina.html" class="botonhoja" onClick="reply_click(this.id)" id="atras8">ATRAS</a>-->
      
@@ -1563,7 +1563,7 @@ function capdep(clicked_id)
         						<p align="center">RESULTADO</p>
     </div>
     	<br>
-    	<h3><div align="center" style="background-color:#FF0" id="silpuntos"></div></h3>
+    	<h3><div align="center" style="background-color:#09F" id="silpuntos"></div></h3>
         
         <center>
         
@@ -1863,7 +1863,7 @@ function limpiarsilverman()
                 </td>
          		<td bgcolor="#FF0000">
                 
-                <font face="Arial Black, Gadget, sans-serif" color="#FFFFFF" size="5"><p align="left"> <a href="#pagapcolor" onClick="opapfc(this.id)" id="btnirno">No hay Respuesta</a></a></p>
+                <p align="left"><a href="#pagapcolor" onClick="opapfc(this.id)" id="btnirno"> <font face="Arial Black, Gadget, sans-serif" color="#FFFFFF" size="5">No hay Respuesta</font></a></p>
                 </td>
                 </tr>
                 
@@ -1973,7 +1973,7 @@ function limpiarsilverman()
     			<p align="center">RESULTADO</p>       
      		</div>
             
-            <h3><div align="center" style="background-color:#FF0" id="puntosapgar"></div></h3>
+            <h3><div align="center" style="background-color:#09F" id="puntosapgar"></div></h3>
             
           <center>
         
@@ -1981,6 +1981,7 @@ function limpiarsilverman()
         </center><br>
             
            <font color="#FFFFFF" size="4" face="Arial Black, Gadget, sans-serif"> <div align="center" id="resapgar"></div></font>
+           <br>
         
          <center>
            <div data-role="footer" data-theme="a">
