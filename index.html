@@ -26,7 +26,7 @@
       <div data-role="content" data-theme="a">
      	<ul data-role="listview">
          <li><a href="#pagparto" data-transition="slidedown" onClick="limpiarfecha()">FECHA PROBABLE DE PARTO</a></li>
-         <li><a href="#pagdep" data-transition="slidedown" onClick="limpiarcapurro()">CAPURRO</a></li>
+         <li><a href="#pagdep" data-transition="slidedown" onClick="limpiarcap()">CAPURRO</a></li>
          <li><a href="#pagsildis" data-transition="slidedown" onClick="limpiarsilverman()">SILVERMAN</a></li>
          <li><a href="#pagapgar" data-transition="slidedown" onClick="limpiarapgar()">APGAR</a></li>
         
@@ -58,7 +58,7 @@
         
         <font face="Arial Black, Gadget, sans-serif" size="4">
         	<p>
-            	Integrantes
+            	Programadores
             </p>
             
             <p>
@@ -331,7 +331,7 @@
 <form>
 <br>
 
-<a href="" class="proyecto"  onClick="operaciones()">CALCULAR</a><br>
+<a href="#" class="proyecto"  onClick="operaciones()">CALCULAR</a><br>
 
  
 </form>
@@ -357,492 +357,8 @@
    </div>
   </div>
   
-  
-  
-  <!---------------------------------SCRIPT NO FUNCIONA----------------------------------------------------->
-  
-<script type="text/livescript">
-function pab(clicked_id)
-{
-	var pabellon=(clicked_id);
-	var glandula=(clicked_id);
-	
-	var valpabellon;
-	var valglandula;
-	var suma;
-	var s;
-	
-	switch(pabellon)
-		{
-		case "a1":
-			suma=0
-			s=0
-			break;
-		case "a2":
-			suma=8
-			s=0
-			break;
-		case "a3":
-			suma=16
-			s=0
-			break;
-		case "a4":
-			suma=24
-			s=0
-			break;
-		case "b1":
-			suma=0
-			s=0
-			break;
-		case "b2":
-			suma=5
-			s=0
-			break;
-		case "b3":
-			suma=10
-			s=0
-			break;
-		case "b4":
-			suma=15
-			s=0
-			break;
-		case "c1":
-			suma=0
-			s=0
-			break;
-		case "c2":
-			suma=5
-			s=0
-			break;
-		case "c3":
-			suma=10
-			s=0
-			break;
-		case "c4":
-			suma=15
-			s=0
-			break;
-		case "c5":
-			s=0
-			suma=20
-			break;
-		case "d1":
-			suma=0
-			s=1
-			break;
-		case "d2":
-			suma=5
-			s=1
-			break;
-		case "d3":
-			suma=10
-			s=1
-			break;
-		case "d4":
-			suma=15
-			s=1
-			break;
-		case "d5":
-			suma=20
-			s=1
-			break;
-		case "l1":
-			suma=0
-			s=0
-			break;
-		case "l2":
-			suma=5
-			s=0
-			break;
-		case "l3":
-			suma=10
-			s=0
-			break;
-		case "l4":
-			s=15
-			s=0
-			break;
-		}
-		
-		var total = document.getElementById("valortotal").innerHTML;
-		
-		total=(parseInt(total)+parseInt(suma));
-			
-		var a=document.getElementById("valortotal").innerHTML =total;
-		
-	
-	if (s==1)
-	{
-		total = document.getElementById("valortotal").innerHTML;
-		t=(parseInt(total)+204)
-		var r=t/7
-		
-		
-		r=r.toString();
-				
-		var numcaracteres = r.length;
-		var num=parseInt(numcaracteres);
-		
-		
-		var cadena = r.charAt(3);
-				
-		var cad=parseInt(cadena);
-			
-		if (cad>=7)
-		{
-			r=parseInt(r)+1
-		} else{
-			var r =r.substring(0,4); 
-		}
-							
-		a=document.getElementById("valortotal").innerHTML =r+" SEMANAS";
-		
-	}
-				
-}
-</script>  
-<!------------------------------CAPURRO NO FUNCIONA----------------------------------------------------------->
-	<div data-role="page" id="pagsano" data-add-back-btn="true" data-theme="a">
-	<div data-role="header" data-theme="a">
-        		<h1>FORMA DE LA OREJA(PABELLÓN)</h1>
-     </div>
 
 	
-    <div>
-     	    
-           <table border="2px"> 
-           <tr>
-           <td>    
-        <a href="#pagsano2"><input type="image" id="a1" onClick="pab(this.id)" src="jquery-mobile/images/pabellon/aplanada.jpg" align="left" width="100" height="100" value="0"></a>
-        </td>
-        <td>
-        <p align="left">Aplanada sin incurvación</p>
-        </td>
-        </tr>
-        
-        <tr>
-        <td>
-       <a href="#pagsano2"> <input type="image" id="a2" onClick="pab(this.id)" src="jquery-mobile/images/pabellon/superior.jpg" align="left" width="100" height="100" value="8"></a>
-       </td>
-       <td bgcolor="#ACBFFF">
-       <p align="left">Borde superior parcialmente incurvado</p>
-       	</td>
-        </tr>
-        
-        <tr>
-        <td>		
-        <a href="#pagsano2"> <input type="image" id="a3" onClick="pab(this.id)" src="jquery-mobile/images/pabellon/todoborde.jpg" align="left" width="100" height="100" value="16"></a>
-        </td>
-        <td>
-        <p align="left">Todo el borde sup incurvado</p>
-        </td>
-        </tr>
-        
-        <tr>
-        <td>
-         <a href="#pagsano2"><input type="image" id="a4" onClick="pab(this.id)" src="jquery-mobile/images/pabellon/incurvadopabellon.jpg" align="left" width="100" height="100" value="24"></a>
-         </td>
-         <td bgcolor="#ACBFFF">
-         <p align="left">Pabellón totalmente incurvado</p>
-     	</td>
-        </tr>
-        </table>
-     </div>
-
-
-   
-           
- <center> 
-      <div data-role="footer" data-theme="a">
-   	<h4>AREA DE SALUD</h4>
-   </div>
-     </div>
-     
-</center>
-
-
-
- <div data-role="page" id="pagsano2" data-add-back-btn="true" data-theme="a">
-	<div data-role="header" data-theme="a">
-        		<h1>TAMAÑO DE GLÁNDULA</h1>
-     </div>
-     
-
-     <div>
-    
-     	<table border="2px"> 
-           <tr>
-           <td>
-   		<a href="#pagsano3"><input type="image" id="b1" onClick="pab(this.id)" src="jquery-mobile/images/glandula/palpable.jpg" align="left" width="100" height="100" value="0"></a>
-        	</td>
-            <td>
-        <p align="left">No palpable</p>
-        	</td>
-            </tr>
-            
-            <tr>
-            <td>
-        <a href="#pagsano3"><input type="image" id="b2" onClick="pab(this.id)" src="jquery-mobile/images/glandula/menor5.jpg"  align="left" width="100" height="100" value="5"></a>
-        	</td>
-            <td bgcolor="#ACBFFF">
-        <p align="left">Palpable menor de 5 mm.</p>
-        	</td>
-            </tr>
-            
-        	<tr>
-            <td>
-        <a href="#pagsano3"><input type="image" id="b3" onClick="pab(this.id)" src="jquery-mobile/images/glandula/entre5y10.jpg" align="left" width="100" height="100" value="10"></a>
-        	</td>
-            <td>
-        <p align="left">Palpable entre 5 y 10 mm.</p>
-        	</td>
-        	</tr>
-            
-            <tr>
-            <td>
-        <a href="#pagsano3"><input type="image" id="b4" onClick="pab(this.id)" src="jquery-mobile/images/glandula/mayor10.jpg"  align="left" width="100" height="100" value="15"></a>
-        	</td>
-            <td bgcolor="#ACBFFF">
-        <p align="left">Palpable mayor a 10 mm.</p>
-     		</td>
-            </tr>
-       </table>
-     </div>
-     
-           
- <center>   
-      <div data-role="footer" data-theme="a">
-   	<h4>AREA DE SALUD</h4>
-   </div>
-     </div>
-     
-</center>     
-
-<!-- sano3 -->
-<div data-role="page" id="pagsano3" data-theme="a">
-	<div data-role="header" data-theme="a">
-        		<h1>FORMACIÓN DEL PEZÓN</h1>
-     </div>
-     
-
-     <div>
-    
-     	<table border="2px"> 
-        <tr>
-        <td>
-         <div align="center">  <a href="#pagsano2" class="botonhoja" onClick="reply_click(this.id)" id="atras3">ATRAS</a></div>
-        </td>
-        <td>
-       <div align="right"> <a href="#pagcapurro" class="botonhoja" onClick="r()">REGRESAR</a></div>
-        </td>
-        
-        </tr>
-        
-           <tr>
-           <td>
-   		<a href="#pagsano4"><input type="image" id="l1" onClick="pab(this.id)" src="jquery-mobile/images/pezon/apenavicible.jpg" align="left" width="100" height="100" value="0"></a>
-        	</td>
-            <td>
-        <p align="left">Apenas visible sin Areola</p>
-        	</td>
-            </tr>
-            
-            <tr>
-            <td>
-        <a href="#pagsano4"><input type="image" id="l2" onClick="pab(this.id)" src="jquery-mobile/images/pezon/diametro75lineachata.jpg"  align="left" width="100" height="100" value="5"></a>
-        	</td>
-            <td bgcolor="#ACBFFF">
-        <p align="left">Diametro menor de 7.5 mm Areola lisa y chata</p>
-        	</td>
-            
-            </tr>
-            
-        	<tr>
-            <td>
-        <a href="#pagsano4"><input type="image" id="l3" onClick="pab(this.id)" src="jquery-mobile/images/pezon/bordenolevantado.jpg" align="left" width="100" height="100" value="10"></a>
-        	</td>
-            <td>
-        <p align="left">Diametro mayor de 7.5 Areola punteada (Borde no elevado)</p>
-        	</td>
-           
-        	</tr>
-            
-            <tr>
-            <td>
-        <a href="#pagsano4"><input type="image" id="l4" onClick="pab(this.id)" src="jquery-mobile/images/pezon/bordelevantado.jpg"  align="left" width="100" height="100" value="15"></a>
-        	</td>
-            <td bgcolor="#ACBFFF">
-        <p align="left">Diametro mayor de 7.5 Areola punteada (Borde elevado)</p>
-     		</td>
-            </tr>
-       </table>
-     </div>
-     
-       
-       <h4><div align="center">SELECCIONADO</div></h4>
-        <h4><div id="f" align="center">0</div></h4>
-           
- <center>   
-      <div data-role="footer" data-theme="a">
-   	<h4>AREA DE SALUD</h4>
-   </div>
-     </div>
-     
-</center>     
-<!-- sano4 -->
-
-
- <div data-role="page" id="pagsano4" data-add-back-btn="true" data-theme="a">
-	<div data-role="header" data-theme="a">
-        		<h1>TEXTURA DE LA PIEL</h1>
-     </div>
-     
-
-     <div>
-     	<table border="2px"> 
-           <tr>
-           <td>
-   		<a href="#pagsano5"><input type="image" id="c1" onClick="pab(this.id)" src="jquery-mobile/images/texturapiel/muyfina.jpg" align="left" width="100" height="100"></a>
-        	</td>
-            <td>
-        <p align="left">Muy fina gelatinosa</p>
-        	</td>
-            </tr>
-        
-        	<tr>
-            <td>
-        <a href="#pagsano5"><input type="image" id="c2" onClick="pab(this.id)" src="jquery-mobile/images/texturapiel/finalisa.jpg" align="left" width="100" height="100" value="5"></a>
-        	</td>
-            <td bgcolor="#ACBFFF">
-        <p align="left">Fina lisa</p>
-        	</td>
-            </tr>
-            
-            <tr>
-            <td>
-        <a href="#pagsano5"><input type="image" id="c3" onClick="pab(this.id)" src="jquery-mobile/images/texturapiel/masgruesa.jpg" align="left" width="100" height="100" value="10"></a>
-        	</td>
-            <td>
-            <p align="left">Mas gruesa discreta descamación superficial</p>
-        	</td>
-            </tr>
-            
-            <tr>
-            <td>
-        <a href="#pagsano5"><input type="image" id="c4" onClick="pab(this.id)" src="jquery-mobile/images/texturapiel/gruesagrietas.jpg" align="left" width="100" height="100" value="15"></a>
-        	</td>
-            <td bgcolor="#ACBFFF">
-        <p align="left">Gruesa grietas superficiales descamación de manos y pies</p>
-        	</td>
-            </tr>
-            
-            <tr>
-            <td>
-         <a href="#pagsano5"><input type="image" id="c5" onClick="pab(this.id)" src="jquery-mobile/images/texturapiel/gruesagrietasape.jpg" align="left" width="100" height="100" value="20"></a>
-         	</td>
-            <td>
-         <p align="left">Gruesa grieta profundas apergaminadas</p>
-         	</td>
-            </tr>
-            </table>
-     </div>
-     
-           
-<center>
-      <div data-role="footer" data-theme="a">
-   	<h4>AREA DE SALUD</h4>
-   </div>
-     </div>
-     
-</center>     
-
-
-<div data-role="page" id="pagsano5" data-add-back-btn="true" data-theme="a">
-	<div data-role="header" data-theme="a">
-        		<h1>PLIEGUES PLANTARES</h1>
-     </div>
-     
-
-     <div">
-       <table border="2px"> 
-           <tr>
-           <td>
-   		<a href="#pagres"><input type="image" id="d1" onClick="pab(this.id)" src="jquery-mobile/images/plantares/sinpliegues.jpg" align="left" width="100" height="100" value="0"></a>
-        	</td>
-            <td>
-        <p align="left">Sin pliegues</p>
-        	</td>
-            </tr>
-            
-            <tr>
-            <td>
-        <a href="#pagres"><input type="image" id="d2" onClick="pab(this.id)" src="jquery-mobile/images/plantares/marcasmaldefinidas.jpg" align="left" width="100" height="100" value="5"></a>
-        	</td>
-            <td bgcolor="#ACBFFF">
-        <p align="left">Marcas mal definidas en la mitad anterior</p>
-        	</td>
-            </tr>
-        
-        	<tr>
-            <td>
-        <a href="#pagres"><input type="image" id="d3" onClick="pab(this.id)" src="jquery-mobile/images/plantares/marcasbiendefinidas.jpg" align="left" width="100" height="100" value="10"></a>
-        	</td>
-            <td>
-        <p align="left">Marcas bien definidas en la 1/2 anterior, surcos en 1/2 anterior</p>
-        	</td>
-            </tr>
-            
-            <tr>
-            <td>
-        <a href="#pagres"><input type="image" id="d4" onClick="pab(this.id)" src="jquery-mobile/images/plantares/surcos.jpg" align="left" width="100" height="100" value="15"></a>
-        	</td>
-            <td bgcolor="#ACBFFF">
-        <p align="left">Surcos en la mitad anterior</p>
-        	</td>
-            </tr>
-            
-           	<tr>
-            <td> 
-         <a href="#pagres"><input type="image" id="d5" onClick="pab(this.id)" src="jquery-mobile/images/plantares/surcosenmas.jpg" align="left" width="100" height="100" value="20"></a>
-         	</td>
-            <td>
-          <p align="left">Surcos en mas de la mitad anterior</p>
-     		</td>
-            </tr>
-      </table>
-                
-<center>
-      <div data-role="footer" data-theme="a">
-   	<h4>AREA DE SALUD</h4>
-   </div>
-     </div>
-     
-     </div> 
-</center>     
-
-
-<div data-role="page" id="pagres" data-theme="a">
-	<div data-role="header" data-theme="a">
-        		<h1>RESULTADO</h1>
-    </div>
-    <div>
-    <center>
-    <br>
-    
-   <h3> <div id="valortotal">0</div></h3>
-    
-    <a href="#pagcapurro" class="proyecto" onClick="r()">REGRESAR</a>
-   
-    </center>
-    
-    </div>
-     <br>
-  	 <center>
-    	<div data-role="footer" data-theme="a">
-   			<h4>AREA DE SALUD</h4>
-	   </div>
- </div>
-	</center>
 <!--------------------------------------BOTON REGRESAR--------------------------------------------------->
 
 <script language="javascript">
@@ -867,7 +383,7 @@ function r(paguina)
 			}else{
 	
 				window.location=('#page');
-
+				
 			}
 
 	
@@ -887,30 +403,24 @@ function confirmar()
 </script>
 <!------------------------------------------limpiar capurro------------------------------------------------------->
 <script>
-function limpiarcapurro()
+function limpiarcap()
 {
-		a=document.getElementById("valortotal").innerHTML ="";
-		a=document.getElementById("valortot").innerHTML ="";
+		document.getElementById("p").innerHTML="";
 		document.getElementById("t").innerHTML="";
 		document.getElementById("f50").innerHTML="";
 		document.getElementById("tp").innerHTML="";
-		document.getElementById("sg").innerHTML="";
 		document.getElementById("pp").innerHTML="";
 		document.getElementById("sb").innerHTML="";
-		document.getElementById("p").innerHTML="";
-		document.getElementById("parte").innerHTML="";
+		document.getElementById("sg").innerHTML="";
+		
 }
 </script>
 
-		<!--------------------------------------------- DEPRIMIDO-------------------------------------------------->
-
-		        
+		<!--------------------------------------------- CAPURRO-------------------------------------------------->
         <div data-role="page" id="pagdep" data-theme="a" data-add-back-btn="true">
 	<div data-role="header" data-theme="a">
         		<h4 align="center">FORMA DE LA OREJA(PABELLÓN)</h4>
      </div>
-
-	
     <div>
      	    
            <table border="2px" align="center"> 
@@ -957,7 +467,7 @@ function limpiarcapurro()
         
         
          <h4><div align="center">SELECCIONADO</div></h4>
-        <h4><div id="p" align="center">0</div></h4>
+        <h4><div id="p" align="center"></div></h4>
      </div>
 
           
@@ -1023,7 +533,7 @@ function limpiarcapurro()
      
      
       	<h4><div align="center">SELECCIONADO</div></h4>
-        <h4><div id="t" align="center">0</div></h4>
+        <h4><div id="t" align="center"></div></h4>
            
  <center>   
       <div data-role="footer" data-theme="a">
@@ -1046,7 +556,6 @@ function limpiarcapurro()
     
      	<table border="2px" align="center"> 
        
-        
            <tr>
            <td>
    		<a href="#pagdep4"><input type="image" id="g1" onClick="capdep(this.id)" src="jquery-mobile/images/pezon/apenavicible.jpg" align="left" width="100" height="100" value="0"></a>
@@ -1062,8 +571,7 @@ function limpiarcapurro()
         	</td>
             <td bgcolor="#FFCC00">
         <p align="left"><a href="#pagdep4" id="g2" onClick="capdep(this.id)"><font face="Arial Black, Gadget, sans-serif" size="3">Diametro menor de 7.5 mm Areola lisa y chata</font></a></p>
-        	</td>
-            
+        	</td> 
             </tr>
             
         	<tr>
@@ -1089,7 +597,7 @@ function limpiarcapurro()
      
        
        <h4><div align="center">SELECCIONADO</div></h4>
-        <h4><div id="f50" align="center">0</div></h4>
+        <h4><div id="f50" align="center"></div></h4>
            
  <center>   
       <div data-role="footer" data-theme="a">
@@ -1161,7 +669,7 @@ function limpiarcapurro()
      </div>
     
      	<h4><div align="center">SELECCIONADO</div></h4>
-        <h4><div id="tp" align="center">0</div></h4>
+        <h4><div id="tp" align="center"></div></h4>
            
            
 <center>
@@ -1232,7 +740,7 @@ function limpiarcapurro()
       </table>
       
         <h4><div align="center">SELECCIONADO</div></h4>
-        <h4><div id="pp" align="center">0</div></h4>
+        <h4><div id="pp" align="center"></div></h4>
            
 <center>
       <div data-role="footer" data-theme="a">
@@ -1246,7 +754,6 @@ function limpiarcapurro()
 
 <!--------------------------------------------SIGNO DE LA BUFANDA 6--------------------------------------------->
 
-
  <div data-role="page" id="pagdep6" data-theme="a">
 	<div data-role="header" data-theme="a">
         		<p align="center">SIGNO DE LA BUFANDA</p>
@@ -1254,7 +761,7 @@ function limpiarcapurro()
      
 
      <div>
-     	<table border="2px"> 
+     	<table border="2px" align="center"> 
            <tr>
            <td>
    		<a href="#pagdep7"><input type="image" id="j1" onClick="capdep(this.id)" src="jquery-mobile/images/bufanda/alcanzalineaauxiliar.jpg" align="left" width="100" height="100"></a>
@@ -1298,7 +805,7 @@ function limpiarcapurro()
      
      	
         <h4 align="left"><div align="center">SELECCIONADO</div></h4>
-        <h4 align="left"><div id="sb" align="center">0</div></h4>
+        <h4 align="left"><div id="sb" align="center"></div></h4>
            
 <center>
       <div data-role="footer" data-theme="a">
@@ -1315,10 +822,9 @@ function limpiarcapurro()
 	<div data-role="header" data-theme="a">
         		<h4 align="center">SIGNO CABEZA EN GOTA</h4>
      </div>
-     
-
+    
      <div>
-     	<table border="2px"> 
+     	<table border="2px" align="center"> 
         
            <tr>
            <td>
@@ -1363,7 +869,7 @@ function limpiarcapurro()
      
     
      	<h4><div align="center">SELECCIONADO</div></h4>
-        <h4><div id="sg" align="center">0</div></h4>
+        <h4><div id="sg" align="center"></div></h4>
      
            
 <center>
@@ -1377,7 +883,7 @@ function limpiarcapurro()
         
    <!-----------------------------------RESULTADO CAPURRO------------------------------------------------------->     
         
-        <div data-role="page" id="pagresdep" data-theme="a">
+        <div data-role="page" id="pagresdep" data-theme="a" data-add-back-btn="true">
 	<div data-role="header" data-theme="a">
         		<p align="center">RESULTADO</p>
     </div>
@@ -1388,7 +894,7 @@ function limpiarcapurro()
       
    	<font color="#000000"><h3 style="background-color:#FF0"> <div id="valortot">0</div></h3></font>
     
-     <a href="#paguina.html" class="botonhoja" onClick="reply_click(this.id)" id="atras8">ATRAS</a>
+     <!--<a href="#paguina.html" class="botonhoja" onClick="reply_click(this.id)" id="atras8">ATRAS</a>-->
      
     <a href="paguina.html" class="botonhoja" id="botfin" onClick="r(this.href);return false">INICIO</a>
     
@@ -1407,18 +913,14 @@ function limpiarcapurro()
 	</center>
 
 
-<!----------------------------------- CAPURRO ATRAS --------------------------------------------------------->
-
-
+<!----------------------------------------- CAPURRO ATRAS --------------------------------------------------------->
 <script type="text/javascript">
 function reply_click(clicked_id)
 {
     id=(clicked_id);
 		switch(id)
 		{
-			case "atras1":
-			 	document.getElementById("p").innerHTML="";
-		//	alert(a);
+			
 			case "atras8":
 			boton=document.getElementById("botfin").text;
 			rr=document.getElementById("parte").innerHTML;
@@ -1451,72 +953,10 @@ function reply_click(clicked_id)
 				suma=suma-parseInt(e)
 				document.getElementById("valortot").innerHTML =suma;
 			}
-				
-			
-				
 				break;
-			case "atras2":
-				var i = document.getElementById("p").innerHTML;
-				var tot=document.getElementById("valortot").innerHTML;
-				valor=(parseInt(tot)-parseInt(i));
-				document.getElementById("valortot").innerHTML =valor;
-			//	alert(valor);
-				document.getElementById("t").innerHTML="";
-			//	alert(a);
-				break;
-			case "atras3":
-				var i = document.getElementById("t").innerHTML;
-				var tot=document.getElementById("valortot").innerHTML;
-				valor=(parseInt(tot)-parseInt(i));
-				document.getElementById("valortot").innerHTML =valor;
-		//		alert(valor);
-				document.getElementById("f50").innerHTML="";
-				//alert(a);
-				break;
-			case "atras4":
-				var i = document.getElementById("f50").innerHTML;
-				var tot=document.getElementById("valortot").innerHTML;
-				valor=(parseInt(tot)-parseInt(i));
-				document.getElementById("valortot").innerHTML =valor;
-			//	alert(valor);
-				document.getElementById("tp").innerHTML="";
-			//	alert(a);
-				break;
-			case "atras5":
-				var i = document.getElementById("tp").innerHTML;
-				var tot=document.getElementById("valortot").innerHTML;
-				valor=(parseInt(tot)-parseInt(i));
-				document.getElementById("valortot").innerHTML =valor;
-			//	alert(valor);
-				document.getElementById("pp").innerHTML="";
-				//alert(a);
-				break;
-			case "atras6":
-				var i = document.getElementById("pp").innerHTML;
-				var tot=document.getElementById("valortot").innerHTML;
-				valor=(parseInt(tot)-parseInt(i));
-				document.getElementById("valortot").innerHTML =valor;
-			//	alert(valor);
-				document.getElementById("sb").innerHTML="";
-			//	alert(a);
-				break;
-			case "atras7":
-				var i = document.getElementById("sb").innerHTML;
-				var tot=document.getElementById("valortot").innerHTML;
-				valor=(parseInt(tot)-parseInt(i));
-				document.getElementById("valortot").innerHTML =valor;
-			//	alert(valor);
-				document.getElementById("sg").innerHTML="";
-				//alert(a);
-				break;
-				
-			
 		}
 }
 </script>
-
-
-
 <!----------------------------------------------------- SCRIPT CAPURRO SUMA--------------------------------------->
 
 <script type="text/livescript">
@@ -1794,18 +1234,12 @@ function capdep(clicked_id)
 			var dd=r.charAt(3)
 			var mm =r.substring(0,2);
 			
-			//alert(dd);
+			
 			if (dd=="")
 			{	
-				//mod=mod.toString();
+				
 				dd=mod;	
 			}
-			
-//			if (mod=="")
-	//		{
-		//		dd=0;	
-			//}
-			
 			
 			if (dd==1)
 			{
@@ -2122,9 +1556,9 @@ function capdep(clicked_id)
         </center>
         </div>
                 
-<!-----------------------------------RESULTADO----------------------------------------------------------->
+<!-----------------------------------RESULTADO SILVERMAN----------------------------------------------------->
 
-					<div data-role="page" id="pagsilres" data-theme="a">
+					<div data-role="page" id="pagsilres" data-theme="a" data-add-back-btn="true">
 							<div data-role="header" data-theme="a">
         						<p align="center">RESULTADO</p>
     </div>
@@ -2132,7 +1566,6 @@ function capdep(clicked_id)
     	<h3><div align="center" style="background-color:#FF0" id="silpuntos"></div></h3>
         
         <center>
-        <a href="#pagsilquejido" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a>
         
         <a href="#page" class="botonhoja">INICIO</a>
         </center>
@@ -2210,8 +1643,6 @@ function sumapuntossilverman(clicked_id)
 		}else{
 			document.getElementById("silpuntos").innerHTML=suma +" PUNTOS";	
 		}
-		
-		
 		if (suma==0)
 		{
 			document.getElementById("silrango").innerHTML="Sin Asfixia ni Dificultad Respiratoria";	
@@ -2249,29 +1680,16 @@ function limpiarsilverman()
 		document.getElementById("silpuntos").innerHTML="";
 }
 </script>
-
-
 <!-------------------------------------------APGAR----------------------------------------------------------------->
- <!------------------------------FRECUENCIA CARDIACA--------------------------------------------------------->  
+ <!------------------------------FRECUENCIA CARDIACA 1--------------------------------------------------------->  
 
 	<div data-role="page" id="pagapgar" data-theme="a" data-add-back-btn="true">
 		<div data-role="header" data-theme="a">
-   
-    		
     		<h4 align="center">FRECUENCIA CARDIACA</h4>       
      	</div>
-   
    	<br>
-    
-  
-    <div id="opfc">
-   
-           
-       <!-------------------------------FC---------------------------------------------->
-         
-        <!--  <p align="left"><a href="#page" class="botonhoja" id="atras1">ATRAS</a><br>-->
-         
-       
+    <div id="opfc">   
+     
          <TABLE border="2" align="center">
          <tr>
          
@@ -2324,13 +1742,9 @@ function limpiarsilverman()
    	
     		<h4 align="center">ESFUERZO RESPIRATORIO</h4>       
      	</div>
-        
         <br>
-    
         <div>          
-         
-          <center>
-          
+          <center>     
            <TABLE border="2" align="center">
          <tr>
          <td>
@@ -2364,21 +1778,17 @@ function limpiarsilverman()
         
         <br>
     		<h4><div align="center">SELECCIONADO</div></h4>
-    
     		<h4><div align="center" id="er"> </div></h4>
-        
         </div>
         
          <center>
            <div data-role="footer" data-theme="a">
          
-         <a href="javascript:confirmar()"  id="atras1" data-icon="home">INICIO</a>    	
+         <a href="javascript:confirmar()" id="atras1" data-icon="home">INICIO</a>    	
     		<h4>AREA DE SALUD</h4>
    			</div>
    			</center>
-   
         </div>
-        
   <!--------------------------TONO MUSCULAR DEL BEBE-------------------------------------------------------->
       
         <div data-role="page" id="pagaptm" data-theme="a" data-add-back-btn="true">
@@ -2386,12 +1796,8 @@ function limpiarsilverman()
 			<div data-role="header" data-theme="a">
     			<h4 align="center">TONO MUSCULAR DEL BEBÉ</h4>       
      		</div>
-    
     <br>
-    
     <div>
-
- 
     <center>
     <TABLE border="2" align="center">
          <tr>
@@ -2423,7 +1829,6 @@ function limpiarsilverman()
           </TABLE>
            </center>
     
-    
      <br>
     		<h4><div align="center">SELECCIONADO</div></h4>
     
@@ -2438,11 +1843,7 @@ function limpiarsilverman()
    </center>
      </div>
    			
-        
-        </div>
-      
-      
-        
+        </div>    
   <!---------------------------REFLEJO DE IRRITABILIDAD--------------------------------------------------------->
         
         <div data-role="page" id="pagapir" data-theme="a" data-add-back-btn="true">
@@ -2450,12 +1851,9 @@ function limpiarsilverman()
     			<h4 align="center">IRRITABILIDAD REFLEJADA</h4>       
      		</div>
         		<br>
-                
-                
+                  
                 <div>
-                
-                <!--<p align="center"><a href="#pagaptm" class="botonhoja" id="atras1">ATRAS</a><a href="javascript:confirmar()" class="botonhoja" id="atras1">REGRESAR</a><HR width=100% align="center"><br>-->
-                
+             
                 <center>
                 
         <TABLE border="2" align="center">
@@ -2505,9 +1903,6 @@ function limpiarsilverman()
    </center>
             
          </div>
-       
-        
-        
   <!------------------------------COLORACION DEL BEBE---------------------------------------------------------->
   
  		 <div data-role="page" id="pagapcolor" data-theme="a" data-add-back-btn="true">
@@ -2518,7 +1913,6 @@ function limpiarsilverman()
             
             <div>
             
-           <!-- <p align="center"><a href="#pagapir" class="botonhoja" id="atras1">ATRAS</a><a href="javascript:confirmar()" class="botonhoja" id="atras1">REGRESAR</a><br>-->
             
             <center>
              <TABLE border="2" align="center">
@@ -2574,7 +1968,7 @@ function limpiarsilverman()
        
 <!---------------------------------RESULTADO APGAR-------------------------------------------------------->
 	
-     <div data-role="page" id="pagresapgar" data-theme="a">
+     <div data-role="page" id="pagresapgar" data-theme="a" data-add-back-btn="true">
 			<div data-role="header" data-theme="a">
     			<p align="center">RESULTADO</p>       
      		</div>
@@ -2582,7 +1976,6 @@ function limpiarsilverman()
             <h3><div align="center" style="background-color:#FF0" id="puntosapgar"></div></h3>
             
           <center>
-        <a href="#pagapcolor" class="botonhoja" onClick="reply_click(this.id)" id="atras11">ATRAS</a>
         
         <a href="#page" class="botonhoja">INICIO</a>
         </center><br>
@@ -2597,8 +1990,6 @@ function limpiarsilverman()
    </center>
         
             </div>
-	      
-          
 <!-------------------------------------SCRIPT APGAR------------------------------------------------------------>    
    
    <script type="text/livescript">
