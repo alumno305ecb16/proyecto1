@@ -29,6 +29,7 @@
          <li><a href="#pagdep" data-transition="slidedown" onClick="limpiarcap()">CAPURRO</a></li>
          <li><a href="#pagsildis" data-transition="slidedown" onClick="limpiarsilverman()">SILVERMAN</a></li>
          <li><a href="#pagapgar" data-transition="slidedown" onClick="limpiarapgar()">APGAR</a></li>
+          <li><a href="#pagriesgoobstetrico" data-transition="slidedown" onClick="limpiarapgar()">CALIFICACIÓN DE RIESGO OBSTÉTRICO</a></li>
         
         <br>
         <li><a href="#acercade" data-transition="slidedown">ACERCA DE</a></li>
@@ -2102,6 +2103,60 @@ function opapfc(clicked_id)
 			document.getElementById("colo").innerHTML="";
 		}
   		</script>
+  
+  <!---------------------------------CALIFICACION DE RIESGO OBSTETRICO------------------------------------>
+   <div data-role="page" id="pagriesgoobstetrico" data-theme="a" data-add-back-btn="true">
+			<div data-role="header" data-theme="a">
+    			<h4 align="center">HISTORIA CLÍNICA</h4>       
+     		</div>
+  		
+        <div>
+			<label><input type="checkbox" value="1"/>Edad (<15 años ó >40 años)</label>
+            <label><input type="checkbox" value="0.5"/>Analfabeta</label>
+            <br>
+           <a href="#pagcalificacionpersonal"><button data-icon="arrow-r">Siguiente</button></a>
+        </div>
+   </div>
+  
+  
+  <!-----------------------------------ANTECEDENTES PERSONALES------------------------------------------>
+   <div data-role="page" id="pagcalificacionpersonal" data-theme="a" data-add-back-btn="true">
+			<div data-role="header" data-theme="a">
+    			<h4 align="center">ANTECEDENTES PERSONALES PATOLÓGICOS</h4>       
+     		</div>
+          <div>
+          		<label><input type="checkbox" value="2"/>TB Pulmonar</label>
+            	<label><input type="checkbox" value="3"/>Dientes Mellitus</label>
+                <label><input type="checkbox" value="3"/>Has Crónica</label>
+            	<label><input type="checkbox" value="4"/>Cirugía Pélvica / Uterina</label>
+                <label><input type="checkbox" value="4"/>Enf. Inmunológicas</label>
+           		 <br>
+           		<a href="#pagcalificaciongineco"><button data-icon="arrow-r">Siguiente</button></a>
+          </div>  
+    </div>
+  <!---------------------------------ANTECEDENTES GINECO-OBSTETRICOS------------------------------------>
+  
+  <div data-role="page" id="pagcalificaciongineco" data-theme="a" data-add-back-btn="true">
+			<div data-role="header" data-theme="a">
+    			<h4 align="center">ANTECEDENTES GINECO-OBSTETRICOS</h4>       
+     		</div>
+          <div>
+          		<label><input type="checkbox" value="2"/>Infertilidad</label>
+            	<label><input type="checkbox" value="3"/>Primigesta o Multi Gesta</label>
+                <label><input type="checkbox" value="2"/>Aborto Previo</label>
+            	<label><input type="checkbox" value="3"/>Cesárea Previa</label>
+                <label><input type="checkbox" value="4"/>2 ó más Cesareas</label>
+                
+                <label><input type="checkbox" value="3"/>Periodo Intergenésico Corto</label>
+            	<label><input type="checkbox" value="2"/>Óbitos(UNO)</label>
+                <label><input type="checkbox" value="3"/>Pérdida Gestacional Recurrente</label>
+            	<label><input type="checkbox" value="2"/>RN Muerte En 1re Semana de Vida EU</label>
+                <label><input type="checkbox" value="2"/>RN con Peso <2500gr </label>
+                <label><input type="checkbox" value="2"/>RN con Peso >4000gr </label>
+           		 <br>
+           		<a href=""><button data-icon="arrow-r">Siguiente</button></a>
+          </div>  
+    </div>
   
 </body>
 </html>
