@@ -29,7 +29,7 @@
          <li><a href="#pagdep" data-transition="slidedown" onClick="limpiarcap()">CAPURRO</a></li>
          <li><a href="#pagsildis" data-transition="slidedown" onClick="limpiarsilverman()">SILVERMAN</a></li>
          <li><a href="#pagapgar" data-transition="slidedown" onClick="limpiarapgar()">APGAR</a></li>
-          <li><a href="#pagriesgoobstetrico" data-transition="slidedown" onClick="limpiarapgar()">CALIFICACIÓN DE RIESGO OBSTÉTRICO</a></li>
+          <li><a href="#pagriesgoobstetrico" data-transition="slidedown" onClick="limpiarcalificaion()">CALIFICACIÓN DE RIESGO OBSTÉTRICO</a></li>
         
         <br>
         <li><a href="#acercade" data-transition="slidedown">ACERCA DE</a></li>
@@ -1986,9 +1986,8 @@ function limpiarsilverman()
         
          <center>
            <div data-role="footer" data-theme="a">
-           	
     		<h4>AREA DE SALUD</h4>
-   </div>
+   			</div>
    </center>
         
             </div>
@@ -2111,11 +2110,18 @@ function opapfc(clicked_id)
      		</div>
   		
         <div>
-			<label><input type="checkbox" value="1"/>Edad (<15 años ó >40 años)</label>
-            <label><input type="checkbox" value="0.5"/>Analfabeta</label>
+        
+			<label><input type="checkbox" id="hc1" value="1"/>Edad (<15 años ó >40 años)</label>
+            <label><input type="checkbox" id="hc2" value="0.5"/>Analfabeta</label>
             <br>
-           <a href="#pagcalificacionpersonal"><button data-icon="arrow-r">Siguiente</button></a>
+           <a href="#pagcalificacionpersonal"><button data-icon="arrow-r">SIGUIENTE</button></a>
         </div>
+        <center>
+        <div data-role="footer" data-theme="a">
+         <a href="javascript:confirmar()" data-icon="home">INICIO</a>
+    		<h4>AREA DE SALUD</h4>
+   			</div>
+         </center>
    </div>
   
   
@@ -2125,14 +2131,20 @@ function opapfc(clicked_id)
     			<h4 align="center">ANTECEDENTES PERSONALES PATOLÓGICOS</h4>       
      		</div>
           <div>
-          		<label><input type="checkbox" value="2"/>TB Pulmonar</label>
-            	<label><input type="checkbox" value="3"/>Dientes Mellitus</label>
-                <label><input type="checkbox" value="3"/>Has Crónica</label>
-            	<label><input type="checkbox" value="4"/>Cirugía Pélvica / Uterina</label>
-                <label><input type="checkbox" value="4"/>Enf. Inmunológicas</label>
+          		<label><input type="checkbox" id="app1"/>TB Pulmonar</label>
+            	<label><input type="checkbox" id="app2"/>Dientes Mellitus</label>
+                <label><input type="checkbox" id="app3"/>Has Crónica</label>
+            	<label><input type="checkbox" id="app4"/>Cirugía Pélvica / Uterina</label>
+                <label><input type="checkbox" id="app5"/>Enf. Inmunológicas</label>
            		 <br>
-           		<a href="#pagcalificaciongineco"><button data-icon="arrow-r">Siguiente</button></a>
+           		<a href="#pagcalificaciongineco"><button data-icon="arrow-r">SIGUIENTE</button></a>
           </div>  
+         <center>
+        <div data-role="footer" data-theme="a">
+         <a href="javascript:confirmar()" data-icon="home">INICIO</a>
+    		<h4>AREA DE SALUD</h4>
+   			</div>
+         </center>
     </div>
   <!---------------------------------ANTECEDENTES GINECO-OBSTETRICOS------------------------------------>
   
@@ -2141,22 +2153,462 @@ function opapfc(clicked_id)
     			<h4 align="center">ANTECEDENTES GINECO-OBSTETRICOS</h4>       
      		</div>
           <div>
-          		<label><input type="checkbox" value="2"/>Infertilidad</label>
-            	<label><input type="checkbox" value="3"/>Primigesta o Multi Gesta</label>
-                <label><input type="checkbox" value="2"/>Aborto Previo</label>
-            	<label><input type="checkbox" value="3"/>Cesárea Previa</label>
-                <label><input type="checkbox" value="4"/>2 ó más Cesareas</label>
+          		<label><input type="checkbox" id="ago1"/>Infertilidad</label>
+            	<label><input type="checkbox" id="ago2"/>Primigesta o Multi Gesta</label>
+                <label><input type="checkbox" id="ago3"/>Aborto Previo</label>
+            	<label><input type="checkbox" id="ago4"/>Cesárea Previa</label>
+                <label><input type="checkbox" id="ago5"/>2 ó más Cesareas</label>
                 
-                <label><input type="checkbox" value="3"/>Periodo Intergenésico Corto</label>
-            	<label><input type="checkbox" value="2"/>Óbitos(UNO)</label>
-                <label><input type="checkbox" value="3"/>Pérdida Gestacional Recurrente</label>
-            	<label><input type="checkbox" value="2"/>RN Muerte En 1re Semana de Vida EU</label>
-                <label><input type="checkbox" value="2"/>RN con Peso <2500gr </label>
-                <label><input type="checkbox" value="2"/>RN con Peso >4000gr </label>
+                <label><input type="checkbox" id="ago6"/>Periodo Intergenésico Corto</label>
+            	<label><input type="checkbox" id="ago7"/>Óbitos(UNO)</label>
+                <label><input type="checkbox" id="ago8"/>Pérdida Gestacional Recurrente</label>
+            	<label><input type="checkbox" id="ago9"/>RN Muerte En 1re Semana de Vida EU</label>
+                <label><input type="checkbox" id="ago10"/>RN con Peso <2500gr </label>
+                <label><input type="checkbox" id="ago11"/>RN con Peso >4000gr </label>
            		 <br>
-           		<a href=""><button data-icon="arrow-r">Siguiente</button></a>
+           		<a href="#pagcalificaionembarazo"><button data-icon="arrow-r">SIGUIENTE</button></a>
           </div>  
+         <center>
+        <div data-role="footer" data-theme="a">
+         <a href="javascript:confirmar()" data-icon="home">INICIO</a>
+    		<h4>AREA DE SALUD</h4>
+   			</div>
+         </center>
     </div>
+  <!----------------------------------------------EMBARAZO ACTUAL------------------------------------->
+  
+   <div data-role="page" id="pagcalificaionembarazo" data-theme="a" data-add-back-btn="true">
+			<div data-role="header" data-theme="a">
+    			<h4 align="center">EMBARAZO ACTUAL</h4>       
+     		</div>
+          <div>
+          
+          		<label><input type="checkbox" id="ea1"/>Preeclampsia en Embarazo Anterior</label>
+            	<label><input type="checkbox" id="ea2"/>Peso > 180 Kg</label>
+                <label><input type="checkbox" id="ea3"/>Peso < 40 Kg</label>
+            	<label><input type="checkbox" id="ea4"/>Talla < 1.50 cm</label>
+                <label><input type="checkbox" id="ea5"/>FUM Incierta</label>
+                
+                <label><input type="checkbox" id="ea6"/>Sin Inmunización Antitetánica</label>
+            	<label><input type="checkbox" id="ea7"/>Grupo Sanguíneo RH Negativo</label>
+                <label><input type="checkbox" id="ea8"/>HB< 10 mg/DL</label>
+            	<label><input type="checkbox" id="ea9"/>VDRL Positivo</label>
+                <label><input type="checkbox" id="ea10"/>VIH Positivo</label>
+                <label><input type="checkbox" id="ea11"/>IVU</label>
+                <label><input type="checkbox" id="ea12"/>Embarazo Múltiple</label>
+           		 <br>
+           		<a href="#pagcalificaionexamen"><button data-icon="arrow-r">SIGUIENTE</button></a>
+          
+          </div>
+         <center>
+        <div data-role="footer" data-theme="a">
+         <a href="javascript:confirmar()" data-icon="home">INICIO</a>
+    		<h4>AREA DE SALUD</h4>
+   			</div>
+         </center>
+          </div>
+  <!----------------------------------EXAMEN CLINICO ANORMAL------------------------------------------>
+  
+  	 <div data-role="page" id="pagcalificaionexamen" data-theme="a" data-add-back-btn="true">
+     	<div data-role="header" data-theme="a">
+    			<h4 align="center">EXAMEN CLINICO ANORMAL</h4>       
+     	</div>
+         <div>
+     
+     			<label><input type="checkbox" id="exacli1"/>Exploración de Mamas Anormal</label>
+            	<label><input type="checkbox" id="exacli2"/>Exploración de Pelvis Anormal</label>
+                <label><input type="checkbox" id="exacli3"/>Exploración de Cérvix Anormal</label>
+            	<label><input type="checkbox" id="exacli4"/>T/A > 130/90 mmhg</label>
+                <label><input type="checkbox" id="exacli5"/>Altura Uterina Discordante</label>
+                
+                <label><input type="checkbox" id="exacli6"/>FCF < 120X</label>
+            	<label><input type="checkbox" id="exacli7"/>FCF > 160X</label>
+     
+     			 <br>
+         <a href="#pagcalificaionresultado" onClick="cro()"><button data-icon="arrow-r">RESULTADO</button></a>
+     </div>
+    <center>
+        <div data-role="footer" data-theme="a">
+         <a href="javascript:confirmar()" data-icon="home">INICIO</a>
+    		<h4>AREA DE SALUD</h4>
+   			</div>
+         </center>
+     </div>     
+            
+     <!----------------------------------------RESULTADO CALIFICACION DE RIESGO OBSTETRICO--------------------->
+     
+      <div data-role="page" id="pagcalificaionresultado" data-theme="a" data-add-back-btn="true">
+     	<div data-role="header" data-theme="a">
+    			<h4 align="center">RESULTADO</h4>       
+     	</div>
+         <div>
+         <h3><div id="rescalificacion" align="center" style="background-color:#06F"></div></h3>
+         <br>
+         <center>
+         			<a href="#page" class="botonhoja">INICIO</a>
+         </center>
+         <br>
+         <h3><div id="restcalificacion" align="center"></div></h3>
+         
+         </div>
+         <div data-role="footer" data-theme="a">
+    		<h4>AREA DE SALUD</h4>
+   			</div>
+         </div>
+         
+         <script>
+		 function cro()
+		 {
+			 //HISTORIA CLINICA
+		 	var a=document.getElementById("hc1").checked;
+			var b=document.getElementById("hc2").checked;
+			//ANTECEDENTES PERONALES PATALOGICOS
+			var c=document.getElementById("app1").checked;
+			var d=document.getElementById("app2").checked;
+			var e=document.getElementById("app3").checked;
+			var f=document.getElementById("app4").checked;
+			var g=document.getElementById("app5").checked;
+			//ANTECEDENTES GINECO-OBSTETRICOS
+			var h=document.getElementById("ago1").checked;
+			var i=document.getElementById("ago2").checked;
+			var j=document.getElementById("ago3").checked;
+			var k=document.getElementById("ago4").checked;
+			var l=document.getElementById("ago5").checked;
+			var m=document.getElementById("ago6").checked;
+			var n=document.getElementById("ago7").checked;
+			var o=document.getElementById("ago8").checked;
+			var p=document.getElementById("ago9").checked;
+			var q=document.getElementById("ago10").checked;
+			var r=document.getElementById("ago11").checked;
+			//EMBARAZO ACTUAL
+			var s=document.getElementById("ea1").checked;
+			var t=document.getElementById("ea2").checked;
+			var u=document.getElementById("ea3").checked;
+			var v=document.getElementById("ea4").checked;
+			var w=document.getElementById("ea5").checked;
+			var x=document.getElementById("ea6").checked;
+			var y=document.getElementById("ea7").checked;
+			var z=document.getElementById("ea8").checked;
+			var aa=document.getElementById("ea9").checked;
+			var bb=document.getElementById("ea10").checked;
+			var cc=document.getElementById("ea11").checked;
+			var dd=document.getElementById("ea12").checked;
+			//EXAMNE CLINICO ANORMAL
+			var ee=document.getElementById("exacli1").checked;
+			var ff=document.getElementById("exacli2").checked;
+			var gg=document.getElementById("exacli3").checked;
+			var hh=document.getElementById("exacli4").checked;
+			var ii=document.getElementById("exacli5").checked;
+			var jj=document.getElementById("exacli6").checked;
+			var kk=document.getElementById("exacli7").checked;
+			
+			
+			if(a==true)
+			{
+				a=1;
+			}else{
+				a=0;	
+			}
+			
+			if(b==true)
+			{
+				b=0.5;	
+			}else{
+				b=0;	
+			}
+			if(c==true)
+			{
+				c=2;	
+			}else{
+				c=0;	
+			}
+			if(d==true)
+			{
+				d=3	
+			}else{
+				d=0	
+			}
+			if (e==true)
+			{
+				e=3;
+			}else{
+				e=0;	
+			}
+			if(f==true)
+			{
+				f=4;	
+			}else{
+				f=0;	
+			}
+			if(g==true)
+			{
+				g=4;
+			}else{
+				g=0;	
+			}
+			if(h==true)
+			{
+				h=2;
+			}else{
+				h=0;	
+			}
+			if(i==true)
+			{
+				i=3;	
+			}else{
+				i=0;	
+			}
+			
+			if(j==true)
+			{
+				j=2;	
+			}else{
+				j=0;	
+			}
+			
+			if(k==true)
+			{
+				k=3;	
+			}else{
+				k=0;	
+			}
+			if(l==true)
+			{
+				l=4;	
+			}else{
+				l=0;	
+			}
+			
+			if(m==true)
+			{
+				m=3;	
+			}else{
+				m=0;	
+			}
+			
+			if(n==true)
+			{
+				n=2;	
+			}else{
+				n=0;	
+			}
+			
+			if(o==true)
+			{
+				o=3;	
+			}else{
+				o=0	
+			}
+			
+			if(p==true)
+			{
+				p=2;	
+			}else{
+				p=0;	
+			}
+			
+			if(q==true)
+			{
+				q=2;	
+			}else{
+				q=0;	
+			}
+			
+			if(r==true)
+			{
+				r=2;	
+			}else{
+				r=0;	
+			}
+			
+			if (s==true)
+			{
+				s=4	;
+			}else{
+				s=0;	
+			}
+			
+			if (t==true)
+			{
+				t=2;	
+			}else{
+				t=0;	
+			}
+			
+			if(u==true)
+			{
+				u=3	;	
+			}else{
+				u=0;	
+			}
+			
+			if(v==true)
+			{
+				v=0.5;	
+			}else{
+				v=0;	
+			}
+			
+			if(w==true)
+			{
+				w=0.5;	
+			}else{
+				w=0;	
+			}
+			if(x==true)
+			{
+				x=0.5;	
+			}else{
+				x=0;	
+			}
+			if(y==true)
+			{
+				y=6;	
+			}else{
+				y=0;	
+			}
+			if(z==true)
+			{
+				z=3;	
+			}else{
+				z=0	
+			}
+			if(aa==true)
+			{
+				aa=3;	
+			}else{
+				aa=0;	
+			}
+			if(bb==true)
+			{
+				bb=6;	
+			}else{
+				bb=0;	
+			}
+			if(cc==true)
+			{
+				cc=3;	
+			}else{
+				cc=0;	
+			}
+			if (dd==true)
+			{
+				dd=6;	
+			}else{
+				dd=0;	
+			}
+			if(ee==true)
+			{
+				ee=3;	
+			}else{
+				ee=0;	
+			}
+			if(ff==true)
+			{
+				ff=6;	
+			}else{
+				ff=0;	
+			}
+			if(gg==true)
+			{
+				gg=4;	
+			}else{
+				gg=0;	
+			}
+			if(hh==true)
+			{
+				hh=6;	
+			}else{
+				hh=0;	
+			}
+			if(ii==true)
+			{
+				ii=4;	
+			}else{
+				ii=0;	
+			}
+			if(jj==true)
+			{
+				jj=6;	
+			}else{
+				jj=0;	
+			}
+			if (kk==true)
+			{
+				kk=6;	
+			}else{
+				kk=0;	
+			}
+				
+			
+			
+			var suma=parseFloat(a)+parseFloat(b)+parseFloat(c)+parseFloat(d)+parseFloat(e)+parseFloat(f)+parseFloat(g)+parseFloat(h)+parseFloat(i)+parseFloat(j)+parseFloat(k)+parseFloat(l)+parseFloat(m)+parseFloat(n)+parseFloat(o)+parseFloat(p)+parseFloat(q)+parseFloat(r)+parseFloat(s)+parseFloat(t)+parseFloat(u)+parseFloat(v)+parseFloat(w)+parseFloat(x)+parseFloat(y)+parseFloat(z)+parseFloat(aa)+parseFloat(bb)+parseFloat(cc)+parseFloat(dd)+parseFloat(ee)+parseFloat(ff)+parseFloat(gg)+parseFloat(hh)+parseFloat(ii)+parseFloat(jj)+parseFloat(kk);
+		
+			if(suma<=6)
+			{
+				document.getElementById("restcalificacion").innerHTML="BAJO RIESGO";
+				document.getElementById("restcalificacion").style.background='#0FEB0C';
+				document.getElementById("restcalificacion").style.color="#000000";
+			}else{
+				document.getElementById("restcalificacion").innerHTML="ALTO RIESGO";
+				document.getElementById("restcalificacion").style.background='#FF0000';
+				document.getElementById("restcalificacion").style.color="#FFFFFF";	
+			}
+		
+			document.getElementById("rescalificacion").innerHTML=suma + " PUNTOS";
+		 }
+		// document.getElementById("silrango").style.background='#FF0000';	
+		//	document.getElementById("silrango").style.color="#FFFFFF";
+		</script>
+        
+  <script>
+  function limpiarcalificaion()
+  {
+ 
+		   //HISTORIA CLINICA
+		 	document.getElementById("hc1").checked=false;
+			document.getElementById("hc2").checked=false;
+			//NTECEDENTES PERONALES PATALOGICOS
+			document.getElementById("app1").checked=false;
+			document.getElementById("app2").checked=false;
+			document.getElementById("app3").checked=false;
+			document.getElementById("app4").checked=false;
+			document.getElementById("app5").checked=false;
+			//ANTECEDENTES GINECO-OBSTETRICOS
+			document.getElementById("ago1").checked=false;
+			document.getElementById("ago2").checked=false;
+			document.getElementById("ago3").checked=false;
+			document.getElementById("ago4").checked=false;
+			document.getElementById("ago5").checked=false;
+			document.getElementById("ago6").checked=false;
+			document.getElementById("ago7").checked=false;
+			document.getElementById("ago8").checked=false;
+			document.getElementById("ago9").checked=false;
+			document.getElementById("ago10").checked=false;
+			document.getElementById("ago11").checked=false;
+			//EMBARAZO ACTUAL
+			document.getElementById("ea1").checked=false;
+			document.getElementById("ea2").checked=false;
+			document.getElementById("ea3").checked=false;
+			document.getElementById("ea4").checked=false;
+			document.getElementById("ea5").checked=false;
+			document.getElementById("ea6").checked=false;
+			document.getElementById("ea7").checked=false;
+			document.getElementById("ea8").checked=false;
+			document.getElementById("ea9").checked=false;
+			document.getElementById("ea10").checked=false;
+			document.getElementById("ea11").checked=false;
+			document.getElementById("ea12").checked=false;
+			//EXAMNE CLINICO ANORMAL
+			document.getElementById("exacli1").checked=false;
+			document.getElementById("exacli2").checked=false;
+			document.getElementById("exacli3").checked=false;
+			document.getElementById("exacli4").checked=false;
+			document.getElementById("exacli5").checked=false;
+			document.getElementById("exacli6").checked=false;
+			document.getElementById("exacli7").checked=false;
+	}
+	</script>
   
 </body>
 </html>
